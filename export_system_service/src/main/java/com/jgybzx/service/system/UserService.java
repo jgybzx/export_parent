@@ -54,4 +54,12 @@ public interface UserService {
      * @param id
      */
     void delete(String id);
+
+    /**
+     * 修改 用户角色
+     * @param roleIds
+     * @param userId
+     */
+    void changeRole(String roleIds,String userId);
+
 }

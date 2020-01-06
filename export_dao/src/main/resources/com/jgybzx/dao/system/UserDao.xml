@@ -37,6 +37,10 @@
     <delete id="delete" parameterType="java.lang.String">
       delete from pe_user where user_id = #{id}
     </delete>
+    <!--  根据 id 删除pe_role_user 表中的信息 -->
+    <delete id="deleteRoleById">
+        delete from pe_role_user where user_id = #{userId}
+    </delete>
 
     <!--保存-->
     <insert id="save" parameterType="com.jgybzx.domain.system.User">
@@ -46,6 +50,10 @@
         values (#{id}, #{deptId}, #{email}, #{userName}, #{password}, #{state}, #{companyId},
         #{companyName}, #{deptName}, #{managerId}, #{joinDate}, #{salary}, #{birthday},
         #{gender}, #{station}, #{telephone}, #{degree}, #{remark}, #{orderNo})
+    </insert>
+    <!--  pe_role_user 表中循环插入数据  -->
+    <insert id="saveUserRole">
+        insert into pe_role_user values (#{userId},#{roleId})
     </insert>
 
     <!--更新-->

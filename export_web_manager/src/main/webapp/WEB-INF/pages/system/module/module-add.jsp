@@ -32,7 +32,7 @@
 
                         <div class="col-md-2 title">上级模块</div>
                         <div class="col-md-4 data">
-                            <select class="form-control" onchange="document.getElementById('parentName').value=this.options[this.selectedIndex].text" name="parentId">
+                            <select id="ModuleParent" class="form-control" onchange="document.getElementById('parentName').value=this.options[this.selectedIndex].text" name="parentId">
                                 <option value="">请选择</option>
                                 <c:forEach items="${menus}" var="item">
                                         <c:if test="${item.ctype != 2}">
@@ -57,12 +57,19 @@
                         <div class="col-md-2 title">类型</div>
                         <div class="col-md-4 data">
                             <div class="form-group form-inline">
-                                <div class="radio"><label><input type="radio" ${module.ctype==0?'checked':''} name="ctype" value="0">主菜单</label></div>
-                                <div class="radio"><label><input type="radio" ${module.ctype==1?'checked':''} name="ctype" value="1">二级菜单</label></div>
-                                <div class="radio"><label><input type="radio" ${module.ctype==2?'checked':''} name="ctype" value="2">按钮</label></div>
+                                <div class="radio"><label><input type="radio" onclick="chooseParentModule(0)" name="ctype" value="0">主菜单</label></div>
+                                <div class="radio"><label><input type="radio" onclick="chooseParentModule(1)" name="ctype" value="1">二级菜单</label></div>
+                                <div class="radio"><label><input type="radio" onclick="chooseParentModule(2)" name="ctype" value="2">按钮</label></div>
                             </div>
                         </div>
 
+                        <script>
+                            function chooseParentModule(parm) {
+                                $.post("test.php", function(data){
+                                    console.log(data)
+                                });
+                            }
+                        </script>
                         <div class="col-md-2 title">状态</div>
                         <div class="col-md-4 data">
                             <div class="form-group form-inline">

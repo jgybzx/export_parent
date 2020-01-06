@@ -7,6 +7,7 @@ import com.jgybzx.domain.system.User;
 import com.jgybzx.service.system.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.UUID;
@@ -40,6 +41,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 根据 企业id查询用户数据
+     *
      * @param companyId
      * @return
      */
@@ -51,6 +53,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 保存
+     *
      * @param user
      */
 
@@ -63,6 +66,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 更新
+     *
      * @param user
      */
     @Override
@@ -72,6 +76,7 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 根据用户id，获取用户数据
+     *
      * @param id
      * @return
      */
@@ -83,10 +88,38 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 根据 id删除用户数据
+     *
      * @param id
      */
     @Override
     public void delete(String id) {
         userDao.delete(id);
     }
+
+    /**
+     * 修改用户角色
+     * 1、删除该用户所有角色信息，
+     * 2、保存前台页面传递的数据
+     *
+     * @param roleIds
+     * @param userId
+     */
+    @Override
+    public void changeRole(String roleIds, String userId) {
+        // 根据 id 删除 pe_role_user 表中的信息
+        userDao.deleteRoleById(userId);
+
+        // 拆分  roleIds
+        String[] roleIdArray = roleIds.split(",");
+        //非空判断
+        if (!StringUtils.isEmpty(roleIdArray) & roleIdArray.length > 0) {
+            // 向 pe_role_user 表中循环插入数据
+            for (String roleId : roleIdArray) {
+                userDao.saveUserRole(userId, roleId);
+            }
+
+        }
+    }
+
+
 }

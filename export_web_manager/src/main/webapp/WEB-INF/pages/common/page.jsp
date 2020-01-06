@@ -51,6 +51,7 @@
 </div>
 <script>
     function goPage(page) {
+        console.log(page)
         document.getElementById("pageNum").value = page
         document.getElementById("pageForm").submit()
     }

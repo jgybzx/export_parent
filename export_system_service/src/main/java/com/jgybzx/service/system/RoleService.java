@@ -54,4 +54,11 @@ public interface RoleService {
      * @param id
      */
     void delete(String id);
+
+    /**
+     * 根据用户id查询，该用户的所有角色
+     * @param id
+     * @return
+     */
+    List<Role> findByUid(String id);
 }

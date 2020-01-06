@@ -91,7 +91,7 @@
                     <tr>
                         <td><input name="ids" value="${item.id}" type="checkbox"></td>
                         <td>${status.index+1}</td>
-                        <td><a href="${ctx}/system/user/toUpdate.do?id=${o.id}">${item.userName}</a></td>
+                        <td><a href="${ctx}/system/user/toUpdate.do?id=${item.id}">${item.userName}</a></td>
                         <td>${item.deptName }</td>
                         <td>${item.email }</td>
                         <td>${item.telephone }</td>
