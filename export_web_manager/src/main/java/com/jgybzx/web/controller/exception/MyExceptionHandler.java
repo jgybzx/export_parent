@@ -19,7 +19,7 @@ public class MyExceptionHandler  implements HandlerExceptionResolver {
     @Override
     public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
 
-        System.out.println(ex.fillInStackTrace());
+        ex.printStackTrace();
         ModelAndView mv = new ModelAndView();
         mv.setViewName("error");
         mv.addObject("msg" ,"出现不可预期的错误，联系管理员");

@@ -1,11 +1,10 @@
 package com.jgybzx.web.controller.base;
 
-import org.apache.shiro.web.session.HttpServletSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * @author: guojy
@@ -13,12 +12,17 @@ import javax.servlet.http.HttpServletResponse;
  * @Description: ${TODO}
  * @version:
  */
-public class BaseCompanyController {
+public class BaseController {
     @Autowired
     protected HttpServletRequest request;
     @Autowired
     protected HttpServletResponse response;
     @Autowired
-    protected HttpServletSession session;
+    protected HttpSession session;
+
+
+    //这两个值以后必须从session中获得
+    protected  String companyId = "1";
+    protected  String companyName = "传智播客";
 
 }

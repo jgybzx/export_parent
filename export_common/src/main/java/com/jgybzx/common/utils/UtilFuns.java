@@ -10,6 +10,7 @@ import java.util.*;
 
 
 /** UtilFuns is a JavaBean.  */
+ @SuppressWarnings("ALL")
  public class UtilFuns {
 
 
@@ -135,7 +136,8 @@ import java.util.*;
         System.out.println(s[i]);
       }
 */
-  static public String[] splitStr(String str,String SplitFlag){
+
+  static public String[] splitStr(String str, String SplitFlag){
     int i =0;
     try{
       StringTokenizer st = new StringTokenizer(str, SplitFlag);
@@ -161,7 +163,7 @@ import java.util.*;
 	String[] aStr = null;
 	str = str.replaceAll(",", " ");		//英文逗号
 	str = str.replaceAll("，", " ");		//中文逗号
-	aStr = this.splitStr(str, " ");		//空格  
+	aStr = splitStr(str, " ");		//空格
 	return aStr;
  }
  
@@ -343,7 +345,7 @@ import java.util.*;
 
   public static boolean isEmpty(String str){
     try{
-      if(str==null || str.equals("null") || str.equals("")){
+      if(str==null || "null".equals(str) || "".equals(str)){
     	  return true;
       }
       return false;
@@ -365,7 +367,7 @@ import java.util.*;
 
   public static boolean isNotEmpty(String str){
     try{
-      if(str==null || str.equals("null") || str.equals("")){
+      if(str==null || "null".equals(str) || "".equals(str)){
     	  return false;
       }
       return true;
@@ -376,7 +378,7 @@ import java.util.*;
 
   public static boolean isNotEmpty(Object obj){
     try{
-      if(obj==null || obj.toString().equals("null") || obj.toString().equals("")){
+      if(obj==null || "null".equals(obj.toString()) || "".equals(obj.toString())){
     	  return false;
       }
       return true;
@@ -406,7 +408,7 @@ import java.util.*;
   public static String convertNull(String strvalue)
   {
     try{
-      if(strvalue.equals("null") || strvalue.length()==0){
+      if("null".equals(strvalue) || strvalue.length()==0){
         return "";
       }else{
         return strvalue.trim();
@@ -434,7 +436,7 @@ import java.util.*;
   {
     try{
       String strvalue = String.valueOf(o);
-      if(strvalue.equals(null) || strvalue.equals("null") || strvalue.length()==0){
+      if(strvalue.equals(null) || "null".equals(strvalue) || strvalue.length()==0){
         return "";
       }else{
         return strvalue.trim();
@@ -539,7 +541,7 @@ import java.util.*;
   {
     try{
       strvalue = strvalue.trim();
-      if(strvalue.equals("null") || strvalue.length()==0){
+      if("null".equals(strvalue) || strvalue.length()==0){
         return "&nbsp;";
       }else{
         return strvalue;
@@ -554,7 +556,7 @@ import java.util.*;
     try{
       String strvalue = String.valueOf(o);
       strvalue = strvalue.trim();
-      if(strvalue.equals("null") || strvalue.length()==0){
+      if("null".equals(strvalue) || strvalue.length()==0){
         return "&nbsp;";
       }else{
         return " " + strvalue.trim();
@@ -590,7 +592,7 @@ import java.util.*;
   {
     try{
       strvalue = convertNull(strvalue);
-      if(strvalue.equals("")){
+      if("".equals(strvalue)){
         return "";
       }else{
         strvalue = new String(strvalue.getBytes("ISO8859_1"), "GB2312");
@@ -607,7 +609,7 @@ import java.util.*;
     try{
       strvalue = String.valueOf(o);
       strvalue = convertNull(strvalue);
-      if(strvalue.equals("")){
+      if("".equals(strvalue)){
         return "";
       }else{
         strvalue = new String(strvalue.getBytes("ISO8859_1"), "GB2312");
@@ -625,8 +627,9 @@ import java.util.*;
     public String UrlEncoder(String s)
     {
         String s1 = "";
-        if(s == null)
+        if(s == null) {
             return "";
+        }
         try
         {
             s1 = URLEncoder.encode(s);
@@ -645,8 +648,9 @@ import java.util.*;
     public String UrlDecoder(String s)
     {
         String s1 = "";
-        if(s == null)
+        if(s == null) {
             return "";
+        }
         try
         {
             s1 = URLDecoder.decode(s);
@@ -666,8 +670,12 @@ import java.util.*;
    */
   public static String format_Aaa(String source) {
 
-    if (source==null) return null;
-    if (source.equals("")) return "";
+    if (source==null) {
+        return null;
+    }
+    if ("".equals(source)) {
+        return "";
+    }
 
     String a;
     a = source.substring(0, 1);
@@ -865,7 +873,7 @@ import java.util.*;
   public String[] ArrayListToString(ArrayList aList) {
     String[] s = new String[aList.size()];
     for (int i = 0; i < aList.size(); i ++) {
-      s[i] = this.convertNull(aList.get(i));
+      s[i] = convertNull(aList.get(i));
     }
     return s;
   }
@@ -878,8 +886,9 @@ import java.util.*;
   public static void formatArrayList(ArrayList al) {
 
     for (int i = 0; i < al.size(); i ++) {
-      if (al.get(i) == null)
-        al.set(i, "");
+      if (al.get(i) == null) {
+          al.set(i, "");
+      }
     }
 
   }
@@ -1182,7 +1191,7 @@ import java.util.*;
    */
   public static String getPassString( String strvalue, int Flag ) {
     try {
-      if ( strvalue.equals("null") || strvalue.compareTo("")==0){
+      if ("null".equals(strvalue) || strvalue.compareTo("")==0){
         return "";
       } else {
         int intStrvalue = strvalue.length();
@@ -1217,7 +1226,7 @@ import java.util.*;
 public static String getPassString( String strvalue, int Flag, int sFlag ,int iPassLen ) {
   try {
     
-    if ( strvalue.equals( "null" ) ) {
+    if ("null".equals(strvalue)) {
       return "";
     } else {
       String strvalue1="";
@@ -1268,7 +1277,7 @@ public static String getPassString( String strvalue, int Flag, int sFlag ,int iP
 	  String sCenterStr = "";
 	  String sEndStr = "";
 	  
-      if ( s.equals("null")){
+      if ("null".equals(s)){
         return "";
       } else {
         int ints = s.length();
@@ -1314,7 +1323,7 @@ public static String getPassString( String strvalue, int Flag, int sFlag ,int iP
 public static String getQQString( String strvalue ) {
 	try {
 	  String QQ="";
-	  if ( strvalue.equals("") ) {
+	  if ("".equals(strvalue)) {
 	    return "";
 	  } else {
 	     QQ="<img src=\"http://wpa.qq.com/pa?p=1:"+strvalue
@@ -1335,7 +1344,7 @@ public static String getQQString( String strvalue ) {
 }
 
 	public String getNoExistString(String allString, String existString){
-		return this.getNoExistString(this.splitStr(allString, ","), existString);
+		return this.getNoExistString(splitStr(allString, ","), existString);
 	}
 	
 	/* 返回existString中的每个字串不在allString中的 */

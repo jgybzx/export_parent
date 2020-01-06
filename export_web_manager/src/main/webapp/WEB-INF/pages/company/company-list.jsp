@@ -99,7 +99,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${pageResult.list}" var="item" varStatus="index">
+                        <c:forEach items="${page.list}" var="item" varStatus="index">
                             <tr>
                                 <td><input name="ids" value="${item.id}" type="checkbox"></td>
                                 <td>${index.count}</td>
@@ -115,7 +115,8 @@
                                 <td class="text-center">${item.balance}</td>
                                 <td class="text-center">
                                     <button type="button" class="btn bg-olive btn-xs"
-                                            onclick='location.href="${ctx}/company/toUpdate.do?id=${item.id}&pageNum=${pageResult.pageNum}&pageSize=${pageResult.pageSize}"'>编辑
+                                            onclick='location.href="${ctx}/company/toUpdate.do?id=${item.id}"'>
+                                        编辑
                                     </button>
                                 </td>
                             </tr>
@@ -127,55 +128,66 @@
             <!-- /.box-body -->
 
             <!-- .box-分页栏 -->
-            <div class="box-footer">
+            <%--<div class="box-footer">
                 <div class="pull-left">
                     <div class="form-group form-inline">
-                        总共${pageResult.pages} 页，共${pageResult.total}条数据。 每页
+                        总共${page.pages} 页，共${page.total}条数据。 每页
                         <select class="form-control" id="selectPage" onchange="findselectPage()">
-                            <%--<option>${pageResult.pageSize}</option>--%>
-                            <option ${pageResult.pageSize == 10?"selected":""}>10</option>
-                            <option ${pageResult.pageSize == 15?"selected":""}>15</option>
-                            <option ${pageResult.pageSize == 20?"selected":""}>20</option>
-                            <option ${pageResult.pageSize == 50?"selected":""}>50</option>
-                            <option ${pageResult.pageSize == 80?"selected":""}>80</option>
+                            &lt;%&ndash;<option>${page.pageSize}</option>&ndash;%&gt;
+                            <option ${page.pageSize == 10?"selected":""}>10</option>
+                            <option ${page.pageSize == 15?"selected":""}>15</option>
+                            <option ${page.pageSize == 20?"selected":""}>20</option>
+                            <option ${page.pageSize == 50?"selected":""}>50</option>
+                            <option ${page.pageSize == 80?"selected":""}>80</option>
                         </select> 条
                     </div>
                 </div>
                 <script>
                     function findselectPage() {
                         var size = document.getElementById("selectPage").value;
-                        location.href="${ctx}/company/list.do?pageNum=${pageResult.pageNum}&pageSize="+size;
+                        location.href = "${ctx}/company/list.do?pageNum=${page.pageNum}&pageSize=" + size;
                     }
                 </script>
 
                 <div class="box-tools pull-right">
                     <ul class="pagination">
                         <li>
-                            <a href="${ctx}/company/list.do?pageNum=1&pageSize=${pageResult.pageSize}" aria-label="Previous">首页</a>
+                            <a href="${ctx}/company/list.do?pageNum=1&pageSize=${page.pageSize}"
+                               aria-label="Previous">首页</a>
                         </li>
-                        <li><a href="${ctx}/company/list.do?pageNum=${pageResult.prePage}&pageSize=${pageResult.pageSize}">上一页</a></li>
-                        <c:forEach varStatus="pageNumberIndext" begin="${pageResult.navigateFirstPage}" end="${pageResult.navigateLastPage}">
-                            <li><a href="${ctx}/company/list.do?pageNum=${pageNumberIndext.index}&pageSize=${pageResult.pageSize}">
-                                    ${pageNumberIndext.index}
-                            </a></li>
+                        <li>
+                            <a href="${ctx}/company/list.do?pageNum=${page.prePage}&pageSize=${page.pageSize}">上一页</a>
+                        </li>
+
+                        <c:forEach var="num" begin="${page.navigateFirstPage}"
+                                   end="${page.navigateLastPage}">
+
+                            <li ${page.pageNum==num?'class="active"':''}>
+                                <a href="${ctx}/company/list.do?pageNum=${num}&pageSize=${page.pageSize}">
+                                        ${num}
+                                </a></li>
                         </c:forEach>
 
 
-                        <li><a href="${ctx}/company/list.do?pageNum=${pageResult.nextPage}&pageSize=${pageResult.pageSize}">下一页</a></li>
                         <li>
-                            <a href="${ctx}/company/list.do?pageNum=${pageResult.pages}&pageSize=${pageResult.pageSize}" aria-label="Next">尾页</a>
+                            <a href="${ctx}/company/list.do?pageNum=${page.nextPage}&pageSize=${page.pageSize}">下一页</a>
+                        </li>
+                        <li>
+                            <a href="${ctx}/company/list.do?pageNum=${page.pages}&pageSize=${page.pageSize}"
+                               aria-label="Next">尾页</a>
                         </li>
                     </ul>
                 </div>
 
+            </div>--%>
+
+
+            <div class="box-footer">
+                <%--引入分页 页面，并传递访问路径 ${ctx}/company/list.do--%>
+                <jsp:include page="../common/page.jsp">
+                    <jsp:param value="${ctx}/company/list.do" name="pageUrl"/>
+                </jsp:include>
             </div>
-
-
-            <%--        <div class="box-footer">
-                        <jsp:include page="../common/page.jsp">
-                            <jsp:param value="${ctx}/company/list.do" name="pageUrl"/>
-                        </jsp:include>
-                    </div>--%>
             <!-- /.box-分页栏-->
 
         </div>

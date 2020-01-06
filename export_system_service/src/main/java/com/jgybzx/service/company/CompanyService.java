@@ -1,5 +1,6 @@
 package com.jgybzx.service.company;
 
+import com.github.pagehelper.PageInfo;
 import com.jgybzx.common.entity.PageResult;
 import com.jgybzx.domain.company.Company;
 
@@ -30,4 +31,11 @@ public interface CompanyService {
     PageResult findPage(int pageNumInt, int pageSizeInt);
 
 
+    /**
+     * 使用  PageHelper  返回分页数据
+     * @param page 页码
+     * @param size 每页显示多少数据
+     * @return
+     */
+    PageInfo findPageByPageHelper(int page, int size);
 }
