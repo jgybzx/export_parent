@@ -21,6 +21,7 @@
     <script type="text/javascript" src="plugins/ztree/js/jquery.ztree.excheck-3.5.js"></script>
 
     <SCRIPT type="text/javascript">
+        <!--
         var setting = {
             check: {
                 enable: true
@@ -32,65 +33,68 @@
             }
         };
 
-        /**
-         * 1.查询所有的模块
-         * 2.构造json数据
-         */
-        var zNodes =[
-            { id:11, pId:1, name:"随意勾选 1-1", open:true},
-            { id:111, pId:11, name:"随意勾选 1-1-1"},
-            { id:112, pId:11, name:"随意勾选 1-1-2"},
-            { id:12, pId:1, name:"随意勾选 1-2", open:true},
-            { id:121, pId:12, name:"随意勾选 1-2-1"},
-            { id:122, pId:12, name:"随意勾选 1-2-2"},
-            { id:2, pId:0, name:"随意勾选 2", checked:true, open:true},
-            { id:21, pId:2, name:"随意勾选 2-1"},
-            { id:22, pId:2, name:"随意勾选 2-2", open:true},
-            { id:221, pId:22, name:"随意勾选 2-2-1", checked:true},
-            { id:222, pId:22, name:"随意勾选 2-2-2"},
-            { id:23, pId:2, name:"随意勾选 2-3"},
-            { id:1, pId:0, name:"随意勾选 1", open:true}
+        var zNodes = [
+            {id: 11, pId: 1, name: "随意勾选 1-1", open: true},
+            {id: 111, pId: 11, name: "随意勾选 1-1-1"},
+            {id: 112, pId: 11, name: "随意勾选 1-1-2"},
+            {id: 12, pId: 1, name: "随意勾选 1-2", open: true},
+            {id: 121, pId: 12, name: "随意勾选 1-2-1"},
+            {id: 122, pId: 12, name: "随意勾选 1-2-2"},
+            {id: 2, pId: 0, name: "随意勾选 2", checked: true, open: true},
+            {id: 21, pId: 2, name: "随意勾选 2-1"},
+            {id: 22, pId: 2, name: "随意勾选 2-2", open: true},
+            {id: 221, pId: 22, name: "随意勾选 2-2-1", checked: true},
+            {id: 222, pId: 22, name: "随意勾选 2-2-2"},
+            {id: 23, pId: 2, name: "随意勾选 2-3"},
+            {id: 1, pId: 0, name: "随意勾选 1", open: true}
         ];
 
-        $(document).ready(function(){
-            $.get("${ctx}/system/role/initModuleData.do?id=${role.id}",function(data) {
-                initZtree(data);
+        //var code;
+
+        /*function setCheck() {
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+                py = $("#py").attr("checked") ? "p" : "",
+                sy = $("#sy").attr("checked") ? "s" : "",
+                pn = $("#pn").attr("checked") ? "p" : "",
+                sn = $("#sn").attr("checked") ? "s" : "",
+                type = {"Y": py + sy, "N": pn + sn};
+            zTree.setting.check.chkboxType = type;
+            showCode('setting.check.chkboxType = { "Y" : "' + type.Y + '", "N" : "' + type.N + '" };');
+        }*/
+
+        // setCheck中使用 showCode 也直接注释掉
+        /*function showCode(str) {
+            if (!code) code = $("#code");
+            code.empty();
+            code.append("<li>" + str + "</li>");
+        }*/
+
+        var zTreeObj;//可以使用zTreeObj 中的各种api
+        //页面加载函数
+        $(document).ready(function () {
+            // 页面加载  ajax获取模块数据
+
+            $.get("/system/role/getZtreeNodes.do?roleId=${role.id}", function (data) {
+                //2.在获取ajax响应的回调方法中，构造ztree
+                //init方法，初始化ztree树,
+                zTreeObj=$.fn.zTree.init($("#treeDemo"), setting, data);  //1.dom域，2、ztree的设置，3、数据
             });
-            //$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+
+
+            // 以下代码表示只能单个单个的选，无法联动，直接 注释掉
+            // 同时里边的setcheck()方法业注释掉
+            /* setCheck();
+             $("#py").bind("change", setCheck);
+             $("#sy").bind("change", setCheck);
+             $("#pn").bind("change", setCheck);
+             $("#sn").bind("change", setCheck);*/
         });
-
-        var zTreeObj;
-
-        //根据获取到的json数据展示ztree树
-        function initZtree(data) {
-            zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, data);
-            zTreeObj.expandAll(true);//true：展开所有
-        }
-
-        //实现权限分配
-        function submitCheckedNodes() {
-            //1.获取所有的勾选权限节点
-            var nodes = zTreeObj.getCheckedNodes(true);//true:被勾选，false：未被勾选
-            //2.循环nodes，获取每个节点的id， 拼接模块字符串（以，分隔）
-            var moduleIds = "";
-            for(var i=0;i<nodes.length;i++) {
-                moduleIds += nodes[i].id +",";
-            }
-            if(moduleIds.length>0) {
-                //substr : 字符串剪切    0 ：起始位置， 第二个参数：最大长度
-                //123456789,      0   9
-                moduleIds = moduleIds.substr(0,moduleIds.length-1);
-            }
-            $("#moduleIds").val(moduleIds);
-            $("#icform").submit();
-        }
-
         //-->
     </SCRIPT>
 </head>
 
 <body style="overflow: visible;">
-<div id="frameContent" class="content-wrapper" style="margin-left:0px;height: 1200px" >
+<div id="frameContent" class="content-wrapper" style="margin-left:0px;height: 1200px">
     <section class="content-header">
         <h1>
             菜单管理
@@ -108,7 +112,10 @@
         <!-- .box-body -->
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">角色 [${role.name}] 权限列表</h3>
+                <h3 class="box-title">角色 [
+                    <font color="#00ced1"><strong>
+                        ${role.name}
+                    </strong></font>] 权限列表</h3>
             </div>
 
             <div class="box-body">
@@ -118,12 +125,35 @@
                     <!--工具栏-->
                     <div class="box-tools text-left">
                         <button type="button" class="btn bg-maroon" onclick="submitCheckedNodes();">保存</button>
-                        <button type="button" class="btn bg-default" onclick="history.back(-1);">返回</button>
+                        <button type="button" class="btn bg-default" onclick="Refresh()">返回</button>
                     </div>
+                    <script>
+                        function Refresh() {
+                            location.href="${ctx}/system/role/list.do"
+                        }
+                    </script>
+                    <script>
+                        function submitCheckedNodes() {
+                            //点击保存，使用ztree的API获取所有已勾选节点的ID字符串
+                            var nodes = zTreeObj.getCheckedNodes(true); //获取所有已勾选节点
+                            var moduleIds="";
+                            for(var i=0;i<nodes.length;i++) {
+                                var node = nodes[i];
+                                moduleIds += node.id ;
+                                if(i< nodes.length-1) {
+                                    moduleIds += ","
+                                }
+                            }
+                            //将拼接后 的 节点id，赋值给 树菜单 form表单的 name，方便后台获取
+                            $("#moduleIds").val(moduleIds);
+                            //2.自动的提交 树  表单
+                            $("#icform").submit();
+                        }
+                    </script>
                     <!--工具栏/-->
                     <!-- 树菜单 -->
                     <form id="icform" name="icform" method="post" action="${ctx}/system/role/updateRoleModule.do">
-                        <input type="text" name="roleid" value="${role.id}"/>
+                        <input type="text" name="roleId" value="${role.id}"/>
                         <input type="text" id="moduleIds" name="moduleIds" value=""/>
                         <div class="content_wrap">
                             <div class="zTreeDemoBackground left" style="overflow: visible">

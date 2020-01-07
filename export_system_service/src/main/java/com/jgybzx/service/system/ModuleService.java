@@ -2,6 +2,7 @@ package com.jgybzx.service.system;
 
 import com.github.pagehelper.PageInfo;
 import com.jgybzx.domain.system.Module;
+import com.jgybzx.domain.system.Role;
 
 import java.util.List;
 
@@ -52,4 +53,25 @@ public interface ModuleService {
      * @param id
      */
     void delete(String id);
+
+    /**
+     * 查找 父级模块
+     * @param ctype
+     * @return
+     */
+    List<Module> findParent(String ctype);
+
+    /**
+     * 根据角色 id，查询对应的 模块数据
+     * @param roleId
+     * @return
+     */
+    List<Module> findRoleModuleById(String roleId);
+
+    /**
+     * 更新角色权限
+     * @param roleId
+     * @param moduleIds
+     */
+    void updateRoleModule(String roleId, String moduleIds);
 }

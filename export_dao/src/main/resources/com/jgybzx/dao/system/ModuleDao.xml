@@ -30,9 +30,19 @@
         select * from ss_module where module_id = #{id}
     </select>
 
+    <!--根据 ctype 查找  父级模块-->
+    <select id="findParent" resultMap="BaseResultMap">
+        select * from ss_module where ctype = #{ctype}
+    </select>
+
     <!--删除-->
     <delete id="delete" parameterType="java.lang.String">
         delete from ss_module where module_id = #{id}
+    </delete>
+
+    <!--根据角色id 删除，角色模块中间表数据-->
+    <delete id="deleteRoleModule">
+        delete from pe_role_module where role_id = #{roleId}
     </delete>
 
     <!--保存-->
@@ -43,6 +53,9 @@
         values (#{id}, #{parentId}, #{parentName}, #{name}, #{layerNum}, #{isLeaf},
         #{ico}, #{cpermission}, #{curl}, #{ctype}, #{state}, #{belong}, #{cwhich}, #{quoteNum},
         #{remark}, #{orderNo})
+    </insert>
+    <insert id="saveRoleModule">
+        insert into pe_role_module values(#{roleId},#{moduleId})
     </insert>
 
     <!--更新-->
@@ -65,4 +78,14 @@
         order_no = #{orderNo}
         where module_id = #{id}
     </update>
+
+    <!--
+            根据角色 id，查询对应的 模块数据
+            SELECT *  FROM ss_module WHERE module_id IN (
+	SELECT module_id FROM pe_role_module WHERE role_id = 'id')
+    -->
+    <select id="findRoleModuleById" resultMap="BaseResultMap">
+        SELECT *  FROM ss_module WHERE module_id IN (
+        SELECT module_id FROM pe_role_module WHERE role_id = #{roleId})
+    </select>
 </mapper>

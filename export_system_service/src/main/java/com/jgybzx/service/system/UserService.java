@@ -62,4 +62,10 @@ public interface UserService {
      */
     void changeRole(String roleIds,String userId);
 
+    /**
+     * 根据email  查询用户
+     * @param email
+     * @return
+     */
+    User login(String email);
 }

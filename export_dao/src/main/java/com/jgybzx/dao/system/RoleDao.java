@@ -57,4 +57,6 @@ public interface RoleDao {
      * @return
      */
     List<Role> findByUid(String id);
+
+
 }

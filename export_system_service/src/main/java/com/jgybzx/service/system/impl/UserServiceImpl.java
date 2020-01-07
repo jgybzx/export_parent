@@ -121,5 +121,17 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    /**
+     * 用户登录
+     * 根据email  查询用户
+     *
+     * @param email
+     * @return
+     */
+    @Override
+    public User login(String email) {
+        return userDao.login(email);
+    }
+
 
 }

@@ -3,6 +3,7 @@ package com.jgybzx.web.controller.system;
 import java.awt.Desktop.Action;
 
 import com.github.pagehelper.PageInfo;
+import com.jgybzx.common.utils.Encrypt;
 import com.jgybzx.domain.system.Dept;
 import com.jgybzx.domain.system.Role;
 import com.jgybzx.domain.system.User;
@@ -103,8 +104,10 @@ public class UserController extends BaseController {
         // 设置企业名字
         user.setCompanyName(companyName);
         if (StringUtils.isEmpty(user.getId())) {
+            user.setPassword(Encrypt.md5(user.getPassword(),user.getEmail()));
             userService.save(user);
         } else {
+            user.setPassword(Encrypt.md5(user.getPassword(),user.getEmail()));
             userService.update(user);
         }
 

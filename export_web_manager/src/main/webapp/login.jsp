@@ -33,16 +33,16 @@
         <p class="login-box-msg">登录系统</p>
         <form action="/login.do" method="post">
             <div class="form-group has-feedback">
-                <input type="email" name="email" value="lw@export.com" class="form-control" placeholder="Email">
+                <input type="email" name="email" value="jgybzx@jgybzx.com" class="form-control" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" name="password" value="123456" class="form-control" placeholder="密码">
+                <input type="password" name="password" value="" class="form-control" placeholder="密码">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
                 <div class="col-xs-8">
-                    <div class="checkbox icheck">
+                    <div class="checkbox icheck" style="color: red">
                         <label class="">${error}</label>
                     </div>
                 </div>
@@ -64,13 +64,13 @@
 <script src="../plugins/iCheck/icheck.min.js"></script>
 <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 <script>
-    var obj = new WxLogin({
+    /*var obj = new WxLogin({
         self_redirect:false,
         id:"login_container",
         appid: "wx3bdb1192c22883f3",
         scope: "snsapi_login",
         redirect_uri: "http://note.java.itcast.cn/weixinlogin"
-    });
+    });*/
 </script>
 
 <script>

@@ -33,7 +33,7 @@
 
                         <div class="col-md-2 title">上级模块</div>
                         <div class="col-md-4 data">
-                            <select class="form-control" onchange="document.getElementById('parentName').value=this.options[this.selectedIndex].text" name="parentId">
+                            <select id="ModuleParent" class="form-control" onchange="document.getElementById('parentName').value=this.options[this.selectedIndex].text" name="parentId">
                                 <option value="">请选择</option>
                                 <c:forEach items="${menus}" var="item">
                                     <c:if test="${item.ctype != 2}">
@@ -42,7 +42,21 @@
                                 </c:forEach>
                             </select>
                         </div>
-
+                        <script>
+                            function chooseParentModule(ctype) {
+                                $.post("/system/module/parentModule.do?ctype=" + ctype, function (data) {
+                                    // console.log(data)
+                                    // 遍历到下拉框中
+                                    var str = "<option value=\"\">请选择</option>";
+                                    $(data).each(function () {
+                                        //data表示一组数据 循环后 获得到每一个对象 this代表每个对象
+                                        str += "<option value=" + this.id + ">" + this.name + "</option>"
+                                    })
+                                    //显示
+                                    $("#ModuleParent").html(str);
+                                });
+                            }
+                        </script>
                         <div class="col-md-2 title">权限标识</div>
                         <div class="col-md-4 data">
                             <input type="text" class="form-control" placeholder="权限标识" name="cpermission" value="${module.cpermission}">
@@ -58,9 +72,9 @@
                         <div class="col-md-2 title">类型</div>
                         <div class="col-md-4 data">
                             <div class="form-group form-inline">
-                                <div class="radio"><label><input type="radio" ${module.ctype==0?'checked':''} name="ctype" value="0">主菜单</label></div>
-                                <div class="radio"><label><input type="radio" ${module.ctype==1?'checked':''} name="ctype" value="1">二级菜单</label></div>
-                                <div class="radio"><label><input type="radio" ${module.ctype==2?'checked':''} name="ctype" value="2">按钮</label></div>
+                                <div class="radio"><label><input type="radio" ${module.ctype==0?'checked':''} onclick="chooseParentModule(0)" name="ctype" value="0">主菜单</label></div>
+                                <div class="radio"><label><input type="radio" ${module.ctype==1?'checked':''} onclick="chooseParentModule(1)" name="ctype" value="1">二级菜单</label></div>
+                                <div class="radio"><label><input type="radio" ${module.ctype==2?'checked':''} onclick="chooseParentModule(2)" name="ctype" value="2">按钮</label></div>
                             </div>
                         </div>
 

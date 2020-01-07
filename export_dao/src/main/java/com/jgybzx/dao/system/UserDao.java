@@ -55,4 +55,11 @@ public interface UserDao {
 	 */
 	void saveUserRole(@Param("userId") String userId,
 					  @Param("roleId") String roleId);
+
+	/**
+	 * 根据email 查询用户
+	 * @param email
+	 * @return
+	 */
+    User login( String email );
 }
