@@ -1,6 +1,7 @@
 package com.jgybzx.service.system;
 
 import com.github.pagehelper.PageInfo;
+import com.jgybzx.domain.system.Module;
 import com.jgybzx.domain.system.User;
 
 import java.util.List;
@@ -25,25 +26,29 @@ public interface UserService {
 
     /**
      * 根据企业id查询所有的用户数据
+     *
      * @param companyId
      * @return
      */
     List<User> findAll(String companyId);
 
     /**
-     *新增用户
+     * 新增用户
+     *
      * @param user
      */
     void save(User user);
 
     /**
      * 修改用户数据
+     *
      * @param user
      */
     void update(User user);
 
     /**
      * 根据id获取用户数据
+     *
      * @param id
      * @return
      */
@@ -51,21 +56,26 @@ public interface UserService {
 
     /**
      * 根据id删除用户数据
+     *
      * @param id
      */
     void delete(String id);
 
     /**
      * 修改 用户角色
+     *
      * @param roleIds
      * @param userId
      */
-    void changeRole(String roleIds,String userId);
+    void changeRole(String roleIds, String userId);
 
     /**
      * 根据email  查询用户
+     *
      * @param email
      * @return
      */
     User login(String email);
+
+
 }

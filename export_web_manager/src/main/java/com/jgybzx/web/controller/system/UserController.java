@@ -60,7 +60,7 @@ public class UserController extends BaseController {
     @Autowired
     private DeptService deptService;
 
-    @RequestMapping(value = "toAdd", name = "跳转添加页面")
+    @RequestMapping(value = "toAdd", name = "跳转添加用户页面")
     public String toAdd() {
         //根据企业id查询部门数据
         List<Dept> deptList = deptService.findAll(companyId);
@@ -74,7 +74,7 @@ public class UserController extends BaseController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "toUpdate", name = "跳转修改页面")
+    @RequestMapping(value = "toUpdate", name = "跳转修改用户页面")
     public String toUpdate(String id) {
 
         // 根据id查询用户信息
@@ -146,7 +146,7 @@ public class UserController extends BaseController {
      * @param id
      * @return
      */
-    @RequestMapping("roleList")
+    @RequestMapping(value = "roleList",name = "显示所有角色")
     public String roleList(String id) {
 
         // 根据id查询用户
@@ -181,7 +181,7 @@ public class UserController extends BaseController {
      * @param userid 用户id
      * @return
      */
-    @RequestMapping("changeRole")
+    @RequestMapping(value = "changeRole",name = "更改角色")
     public String changeRole(@RequestParam(defaultValue = " ") String roleIds,String userid) {
         userService.changeRole(roleIds,userid);
         // 修改完之后 跳转用户列表

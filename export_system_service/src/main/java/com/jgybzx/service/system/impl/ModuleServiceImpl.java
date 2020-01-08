@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.jgybzx.dao.system.ModuleDao;
 import com.jgybzx.domain.system.Module;
 import com.jgybzx.domain.system.Role;
+import com.jgybzx.domain.system.User;
 import com.jgybzx.service.system.ModuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -98,6 +99,50 @@ public class ModuleServiceImpl implements ModuleService {
         // 遍历向中间表保存数据
         for (String moduleId : arrays) {
             moduleDao.saveRoleModule(roleId,moduleId);
+        }
+    }
+
+    // =====================================================================================
+    /**
+     * 用户类型
+     *   - 通过用户数据库表中的==degree==字段区分 ：
+     *   - ==0：SaaS管理员==
+     *   - ==1：企业管理员==
+     *   - ==其他：企业普通员工==
+     * 模块从属
+     *   - 通过模块对象中的==belong==字段区分
+     *   - ==0：Saas管理的内部菜单==
+     *   - ==1：企业使用的业务菜单==
+     * 不同的用户类型访问不同的模块
+     *   - SaaS管理员 ： 访问所有Saas管理的内部菜单
+     *     == 查询所有 belong = 0的模块
+     *   - 企业管理员：访问企业使用的业务菜单
+     *     == 查询所有 belong = 1的模块
+     *   - 企业员工：根据RBAC权限模型，从数据库查询
+     *     == 多个表联合查询
+     */
+    //================================================================================
+
+    /**
+     * 根据用户id，查询该用户的角色，并查出对应的模块module(或者权限)
+     *
+     * @param loginuser
+     * @return
+     */
+    @Override
+    public List<Module> findModuleByUserId(User loginuser) {
+
+        // 判断用户类型 degree字段 0：SaaS管理员;1：企业管理员;
+        Integer degree = loginuser.getDegree();
+        if (degree==0){
+            //0：SaaS管理员 查询所有 belong = 0的模块
+            return moduleDao.findModuleByBelong(0);
+        }else if(degree ==1){
+            // 1：企业管理员 查询所有 belong = 1的模块
+            return moduleDao.findModuleByBelong(1);
+        }else {
+            // 其他：企业普通员工 根据RBAC权限模型，从数据库查询
+            return moduleDao.findModuleByUserId(loginuser.getId());
         }
     }
 }

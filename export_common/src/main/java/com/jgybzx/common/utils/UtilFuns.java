@@ -10,7 +10,6 @@ import java.util.*;
 
 
 /** UtilFuns is a JavaBean.  */
- @SuppressWarnings("ALL")
  public class UtilFuns {
 
 

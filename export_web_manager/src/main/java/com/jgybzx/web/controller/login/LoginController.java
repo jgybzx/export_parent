@@ -2,7 +2,9 @@ package com.jgybzx.web.controller.login;
 
 
 import com.jgybzx.common.utils.Encrypt;
+import com.jgybzx.domain.system.Module;
 import com.jgybzx.domain.system.User;
+import com.jgybzx.service.system.ModuleService;
 import com.jgybzx.service.system.UserService;
 import com.jgybzx.web.controller.base.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +12,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 public class LoginController extends BaseController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/login")
+    @Autowired
+    private ModuleService moduleService;
+    @RequestMapping(value = "/login",name = "用户登陆")
     public String login(String email, String password) {
 
         //非空判断
@@ -29,22 +35,18 @@ public class LoginController extends BaseController {
 
         //加密密码
         password = Encrypt.md5(password, email);
-        System.out.println(password);
         if (loginUser == null || !(loginUser.getPassword().equals(password))) {
             // 未找到用户或者密码不正确，提示错误信息
             request.setAttribute("error", "未找到用户或者密码不正确");
             return "forward:/login.jsp";
         } else {
             // 登陆成功，将用户信息存入session
-            request.getSession().setAttribute("loginUser", loginUser);
+            session.setAttribute("loginUser", loginUser);
 
-            // 不同的用户看到的 菜单（权限或模块）应该是不一样的，所以查询该用户的权限
-            /**
-             * 根据用户，查询该用户的所有角色id 表：pe_role_user
-             * 根据角色id查询该角色所有的权限(module)id，表:pe_role_module
-             * 根据权限id查询该权限
-             */
+            // 不同的用户，有不同的身份 SaaS管理员 企业管理员 企业员工，所看到的菜单也是不一样的
+            List<Module> moduleList= moduleService.findModuleByUserId(loginUser);
 
+            session.setAttribute("modules",moduleList);
             // 跳转主页
             return "home/main";
         }
@@ -63,7 +65,7 @@ public class LoginController extends BaseController {
         return "forward:login.jsp";
     }
 
-    @RequestMapping("/home")
+    @RequestMapping(value = "/home",name = "返回主页")
     public String home() {
         return "home/home";
     }

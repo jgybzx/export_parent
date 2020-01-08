@@ -73,4 +73,19 @@ public interface ModuleDao {
      * @param moduleId
      */
     void saveRoleModule(@Param("roleId") String roleId,@Param("moduleId") String moduleId);
+
+    /**
+     * 0：SaaS管理员 查询所有 belong = 0的模块
+     * 1：企业管理员 查询所有 belong = 1的模块
+     * @param belong
+     * @return
+     */
+    List<Module> findModuleByBelong(int belong);
+
+    /**
+     * 其他：企业普通员工 根据RBAC权限模型，从数据库查询
+     * @param UserId
+     * @return
+     */
+    List<Module> findModuleByUserId(String UserId);
 }

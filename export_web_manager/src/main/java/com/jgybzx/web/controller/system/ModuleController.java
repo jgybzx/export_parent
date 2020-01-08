@@ -97,7 +97,7 @@ public class ModuleController extends BaseController {
         return "redirect:/system/module/list.do";
     }
 
-    @RequestMapping("/delete")
+    @RequestMapping(value = "/delete",name = "删除模块")
     public String delete(String id) {
         moduleService.delete(id);
         return "redirect:/system/module/list.do";
@@ -108,7 +108,7 @@ public class ModuleController extends BaseController {
      * @param ctype
      * @return
      */
-    @RequestMapping("parentModule")
+    @RequestMapping(value = "parentModule",name = "获取上级模块")
     @ResponseBody
     public List<Module> chooseParentModule(String ctype){
         System.out.println(ctype);

@@ -49,7 +49,7 @@ public class DeptController extends BaseController {
      *
      * @return
      */
-    @RequestMapping(value = "toAdd", name = "跳转添加页面")
+    @RequestMapping(value = "toAdd", name = "跳转添加部门页面")
     public String toAdd() {
         //根据企业id查询部门数据
         List<Dept> deptList = deptService.findAll(companyId);
@@ -63,7 +63,7 @@ public class DeptController extends BaseController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "toUpdate", name = "跳转修改页面")
+    @RequestMapping(value = "toUpdate", name = "跳转修改部门页面")
     public String toUpdate(String id) {
 
         // 根据id查询部门信息

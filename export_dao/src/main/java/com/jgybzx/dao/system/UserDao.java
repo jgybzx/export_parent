@@ -1,5 +1,6 @@
 package com.jgybzx.dao.system;
 
+import com.jgybzx.domain.system.Module;
 import com.jgybzx.domain.system.User;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -62,4 +63,6 @@ public interface UserDao {
 	 * @return
 	 */
     User login( String email );
+
+
 }

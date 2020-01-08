@@ -32,7 +32,6 @@ public class DeptServiceImpl implements DeptService {
      */
     @Override
     public PageInfo findByPage(Integer page, Integer size, String companyId) {
-        System.out.println("PageInfo");
         PageHelper.startPage(page, size);
         List<Dept> deptList = deptDao.findAll(companyId);
         return new PageInfo(deptList);

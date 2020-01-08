@@ -21,8 +21,11 @@ public class BaseController {
     protected HttpSession session;
 
 
-    //这两个值以后必须从session中获得
+    /**
+     * 这两个值以后必须从session中获得
+     */
+
     protected  String companyId = "1";
-    protected  String companyName = "传智播客";
+    protected  String companyName = "NY-738星云";
 
 }

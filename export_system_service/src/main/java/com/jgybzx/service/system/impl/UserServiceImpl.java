@@ -3,6 +3,7 @@ package com.jgybzx.service.system.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.jgybzx.dao.system.UserDao;
+import com.jgybzx.domain.system.Module;
 import com.jgybzx.domain.system.User;
 import com.jgybzx.service.system.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,6 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public PageInfo findByPage(Integer page, Integer size, String companyId) {
-        System.out.println("PageInfo");
         PageHelper.startPage(page, size);
         List<User> userList = userDao.findAll(companyId);
         return new PageInfo(userList);
@@ -132,6 +132,8 @@ public class UserServiceImpl implements UserService {
     public User login(String email) {
         return userDao.login(email);
     }
+
+
 
 
 }

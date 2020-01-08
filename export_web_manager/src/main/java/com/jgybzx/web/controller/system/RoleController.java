@@ -38,7 +38,7 @@ public class RoleController extends BaseController {
      * @param size
      * @return
      */
-    @RequestMapping(value = "/list", name = "查询所有")
+    @RequestMapping(value = "/list", name = "查询所有角色信息")
     public String list(@RequestParam(defaultValue = "1") Integer page,
                        @RequestParam(defaultValue = "5") Integer size) {
 
@@ -53,7 +53,7 @@ public class RoleController extends BaseController {
      *
      * @return
      */
-    @RequestMapping(value = "/toAdd", name = "跳转添加页面")
+    @RequestMapping(value = "/toAdd", name = "跳转添加角色页面")
     public String toAdd() {
         return "system/role/role-add";
     }
@@ -64,7 +64,7 @@ public class RoleController extends BaseController {
      * @param role
      * @return
      */
-    @RequestMapping(value = "/edit", name = "新增或修改")
+    @RequestMapping(value = "/edit", name = "新增或修改角色")
     public String edit(Role role) {
         role.setCompanyId(companyId);
         role.setCompanyName(companyName);
@@ -83,7 +83,7 @@ public class RoleController extends BaseController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/toUpdate", name = "跳转修改 页面")
+    @RequestMapping(value = "/toUpdate", name = "跳转修改角色页面")
     public String toUpdate(String id) {
         Role role = roleService.findById(id);
         request.setAttribute("role", role);
@@ -97,7 +97,7 @@ public class RoleController extends BaseController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/delete", name = "删除")
+    @RequestMapping(value = "/delete", name = "删除角色")
     public String delete(String id) {
         roleService.delete(id);
         return "redirect:/system/role/list.do";
@@ -133,7 +133,7 @@ public class RoleController extends BaseController {
     }
 
 
-    @RequestMapping(value = "/getZtreeNodes", name = "获取Ztree的数据")
+    @RequestMapping(value = "/getZtreeNodes", name = "获取角色的权限Ztree的数据")
     @ResponseBody
     public List getZtreeNodes(String roleId) {
         List<Map<String,String>> list=new ArrayList<>();
@@ -164,12 +164,12 @@ public class RoleController extends BaseController {
     }
 
     /**
-     * 跟新 角色权限，思路，先全删，再遍历增加
+     * 更新角色权限，思路，先全删，再遍历增加
      * @param moduleIds
      * @param roleId
      * @return
      */
-    @RequestMapping("updateRoleModule")
+    @RequestMapping(value = "updateRoleModule",name = "更新角色权限")
     public String updateRoleModule(String roleId,String moduleIds){
         /// System.out.println(moduleIds);
         moduleService.updateRoleModule(roleId,moduleIds);
