@@ -1,6 +1,8 @@
 package com.jgybzx.web.controller.base;
 
+import com.jgybzx.domain.system.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,5 +29,19 @@ public class BaseController {
 
     protected  String companyId = "1";
     protected  String companyName = "NY-738星云";
+
+    /**
+     * 在所有方法执行执行执行此方法
+     */
+    @ModelAttribute
+    public void before(){
+        // 在所有方法执行之前取到登陆的用户  赋值 companyId 和 companyName
+
+        User loginUser = (User) session.getAttribute("loginUser");
+        if (loginUser!=null){
+            companyId = loginUser.getCompanyId();
+            companyName=loginUser.getCompanyName();
+        }
+    }
 
 }

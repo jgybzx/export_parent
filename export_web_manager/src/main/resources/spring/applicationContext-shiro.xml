@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置 redis-->
+    <bean class="org.crazycake.shiro.RedisManager" id="redisManager">
+        <!-- 指定redis 服务器地址-->
+        <property name="host" value="127.0.0.1:6379"/>
+    </bean>
+    <!-- 配置 缓存 管理器-->
+    <bean class="org.crazycake.shiro.RedisCacheManager" id="redisCacheManager">
+        <!--注入 redis-->
+        <property name="redisManager" ref="redisManager"/>
+    </bean>
+
+
+    <!--注入shiro 安全控制器-->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <!--放入自定义 realm 域-->
+        <property name="realm" ref="authRealm"/>
+        <!-- 将缓存管理器 放入 安全控制器-->
+        <!--<property name="cacheManager" ref="redisCacheManager"/>-->
+    </bean>
+
+    <!--自定义 realm域-->
+    <bean id="authRealm" class="com.jgybzx.shiro.AuthRealm">
+        <!--注入自定义 密码比较器-->
+        <property name="credentialsMatcher" ref="customerCredentialsMatcher"/>
+    </bean>
+
+    <!--自定义密码比较器-->
+    <bean id="customerCredentialsMatcher" class="com.jgybzx.shiro.CustomerCredentialsMatcher"/>
+
+    <!-- filter-name这个名字的值来自于web.xml中filter的名字 -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <!-- shrio 过滤器，判断用户是否登陆，如果为登陆，跳转到下面配置的页面  -->
+        <property name="loginUrl" value="/index.jsp"/>
+        <!--权限不足的跳转页面-->
+        <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
+        <property name="filterChainDefinitions">
+            <!-- /**代表下面的多级目录也过滤 -->
+            <value>
+                <!-- 可以针对每一个路径配置一个-->
+                <!-- 必须拥有 模块管理 和 XXXIII 才能访问该路径 -->
+                /system/module/list.do = perms["模块管理"]
+                /company/list.do = perms["企业管理"]
+                <!-- aono 表示不需要登陆也可以访问,登陆，登出以及一些静态资源-->
+                /login* = anon
+                /logout* = anon
+                /css/** = anon
+                /img/** = anon
+                /plugins/** = anon
+                /images/** = anon
+                /make/** = anon
+                <!-- authc 必须登陆才能访问的页面 -->
+                /** = authc
+                /*.* = authc
+            </value>
+        </property>
+    </bean>
+
+    <!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <!-- 生成代理，通过代理进行控制 -->
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+          depends-on="lifecycleBeanPostProcessor">
+        <property name="proxyTargetClass" value="true"/>
+    </bean>
+
+    <!-- 安全管理器 -->
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+</beans>

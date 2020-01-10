@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.jgybzx.domain.company.Company;
 import com.jgybzx.service.company.CompanyService;
 import com.jgybzx.web.controller.base.BaseController;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -96,6 +97,5 @@ public class Controller extends BaseController {
         companyService.delete(id);
         return "redirect:/company/list.do";
     }
-
 
 }

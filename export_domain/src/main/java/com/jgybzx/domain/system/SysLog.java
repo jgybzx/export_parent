@@ -9,7 +9,13 @@ public class SysLog {
     private String userName;
     private String ip;
     private Date time;
+	/**
+	 * 切点方法名称
+	 */
 	private String method;
+	/**
+	 * @RequestMapping注解中的name
+	 */
 	private String action;
     private String companyId;
     private String companyName;

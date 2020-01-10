@@ -99,5 +99,5 @@ public interface ModuleService {
      * @param loginUser
      * @return
      */
-    List<Module> findModuleByUserId(User loginUser);
+    List<Module> findModuleByUser(User loginUser);
 }

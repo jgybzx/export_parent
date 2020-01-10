@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.jgybzx.domain.system.Module;
 import com.jgybzx.service.system.ModuleService;
 import com.jgybzx.web.controller.base.BaseController;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -32,6 +33,7 @@ public class ModuleController extends BaseController {
      * @param size
      * @return
      */
+    //注解方式如果没有权限 直接抛出异常 必须还需要自己处理这个异常
     @RequestMapping(value = "/list", name = "分页查询数据")
     public String list(@RequestParam(defaultValue = "1") Integer page,
                        @RequestParam(defaultValue = "5") Integer size) {

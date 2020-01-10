@@ -148,6 +148,7 @@
                             $("#moduleIds").val(moduleIds);
                             //2.自动的提交 树  表单
                             $("#icform").submit();
+                            alert("保存成功")
                         }
                     </script>
                     <!--工具栏/-->

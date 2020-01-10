@@ -130,8 +130,7 @@ public class ModuleServiceImpl implements ModuleService {
      * @return
      */
     @Override
-    public List<Module> findModuleByUserId(User loginuser) {
-
+    public List<Module> findModuleByUser(User loginuser) {
         // 判断用户类型 degree字段 0：SaaS管理员;1：企业管理员;
         Integer degree = loginuser.getDegree();
         if (degree==0){

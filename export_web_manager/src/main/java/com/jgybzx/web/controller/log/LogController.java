@@ -1,4 +1,4 @@
-package com.jgybzx.web.log;
+package com.jgybzx.web.controller.log;
 
 import com.github.pagehelper.PageInfo;
 import com.jgybzx.domain.system.SysLog;

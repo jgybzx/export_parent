@@ -3,6 +3,10 @@ package com.jgybzx.domain.system;
 public class User {
 
 
+    /**
+     * shiro整合redies,在保存缓存数据的时候，是根据每个用户存储不同的缓存，用于区分每个用户，用的就是id
+     * 注意  shiro 用的 是id，属性名字只能是 id，不能是userId
+     */
     private String id;
 
 

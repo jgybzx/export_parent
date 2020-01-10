@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author: guojy
@@ -23,6 +24,7 @@ public class SysLogServiceImpl implements SysLogService {
 
     @Override
     public void save(SysLog sysLog) {
+        sysLog.setId(UUID.randomUUID().toString());
         sysLogDao.save(sysLog);
     }
 
