@@ -73,7 +73,7 @@ public class LoginController extends BaseController {
      * @param password
      * @return
      */
-    @RequestMapping(value = "/login", name = "用户登陆")
+    /*@RequestMapping(value = "/login", name = "用户登陆")
     public String login(String email, String password) {
         //非空判断
         if (StringUtils.isEmpty(email) || StringUtils.isEmpty(password)) {
@@ -103,7 +103,7 @@ public class LoginController extends BaseController {
             request.setAttribute("error", "未找到用户或者密码不正确");
             return "forward:/login.jsp";
         }
-    }
+    }*/
 
     /**
      * 用户登出
@@ -120,5 +120,38 @@ public class LoginController extends BaseController {
     @RequestMapping(value = "/home", name = "返回主页")
     public String home() {
         return "home/home";
+    }
+
+
+
+    @RequestMapping(value = "/login", name = "用户登陆")
+    public String login(String email, String password) {
+        System.out.println("登陆方法执行");
+        // 根据email查询是否 存在该用户
+        User loginUser = userService.login(email);
+        if (loginUser==null){
+            request.setAttribute("error","没有该用户");
+            return "forward:/login.jsp";
+        }
+
+        try {
+            // 获取 subject对象
+            Subject subject = SecurityUtils.getSubject();
+            UsernamePasswordToken upToken =  new UsernamePasswordToken(email,password);
+            // 调用login 同时会执行我们自定义的 认证方法
+            subject.login(upToken);
+            System.out.println("认证成功");
+            // 如果 不抛异常，说明认证成功，获取用户数据，放入session
+            User user = (User) subject.getPrincipal();
+            session.setAttribute("loginUser",user);
+
+            List<Module> moduleList = moduleService.findModuleByUser(loginUser);
+            session.setAttribute("modules",moduleList);
+            return "home/main";
+        } catch (AuthenticationException e) {
+            e.printStackTrace();
+            request.setAttribute("msg","密码错误");
+            return "forward:login.jsp";
+        }
     }
 }

@@ -2,6 +2,7 @@ package com.jgybzx.domain.company;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Date;
  * @version:
  */
 @Data
-public class Company {
+public class Company implements Serializable {
     private String id;//  ID
     private String name;//  公司名称
     private Date expirationDate;//  到期时间

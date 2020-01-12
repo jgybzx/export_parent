@@ -9,13 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>export_domain</artifactId>
-<dependencies>
-    <dependency>
-        <groupId>com.jgyzbx</groupId>
-        <artifactId>export_common</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </dependency>
-</dependencies>
+    <artifactId>export_company_interface</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.jgyzbx</groupId>
+            <artifactId>export_domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

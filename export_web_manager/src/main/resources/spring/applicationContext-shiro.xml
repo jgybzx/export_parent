@@ -24,18 +24,18 @@
     </bean>
 
     <!--自定义 realm域-->
-    <bean id="authRealm" class="com.jgybzx.shiro.AuthRealm">
+    <bean id="authRealm" class="com.jgybzx.shiro_02.AuthRealm">
         <!--注入自定义 密码比较器-->
         <property name="credentialsMatcher" ref="customerCredentialsMatcher"/>
     </bean>
 
     <!--自定义密码比较器-->
-    <bean id="customerCredentialsMatcher" class="com.jgybzx.shiro.CustomerCredentialsMatcher"/>
+    <bean id="customerCredentialsMatcher" class="com.jgybzx.shiro_02.CustomerCredentialsMatcher"/>
 
     <!-- filter-name这个名字的值来自于web.xml中filter的名字 -->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
-        <!-- shrio 过滤器，判断用户是否登陆，如果为登陆，跳转到下面配置的页面  -->
+        <!-- shrio 过滤器，判断用户是否登陆，如果未登陆，跳转到下面配置的页面  -->
         <property name="loginUrl" value="/index.jsp"/>
         <!--权限不足的跳转页面-->
         <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
