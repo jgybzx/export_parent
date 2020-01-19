@@ -1,6 +1,8 @@
 package com.jgybzx.domain.system;
 
-public class Dept{
+import java.io.Serializable;
+
+public class Dept implements Serializable {
     /**
      * 部门id
      */ 

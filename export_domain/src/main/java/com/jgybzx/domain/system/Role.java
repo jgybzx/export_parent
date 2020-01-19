@@ -1,6 +1,8 @@
 package com.jgybzx.domain.system;
 
-public class Role {
+import java.io.Serializable;
+
+public class Role  implements Serializable {
     /** 
      */ 
     private String id;

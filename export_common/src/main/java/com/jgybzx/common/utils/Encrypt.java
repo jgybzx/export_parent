@@ -18,7 +18,7 @@ public class Encrypt {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(new Md5Hash("12345","lw@export.com",2).toString());
+		System.out.println(new Md5Hash("12345","lemon@itcast.com",2).toString());
 	}
 
 

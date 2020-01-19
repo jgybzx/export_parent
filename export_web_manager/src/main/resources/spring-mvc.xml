@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
@@ -10,14 +11,32 @@
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd
        http://www.springframework.org/schema/aop
-       http://www.springframework.org/schema/aop/spring-aop.xsd">
+       http://www.springframework.org/schema/aop/spring-aop.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
+    <context:property-placeholder location="classpath:properties/qiniu.properties"/>
     <context:component-scan base-package="com.jgybzx.web"/>
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven  conversion-service="conversionService"/>
+    <bean class="org.springframework.context.support.ConversionServiceFactoryBean" id="conversionService">
+        <property name="converters">
+            <list>
+                <bean class="com.jgybzx.web.controller.converter.MyStringToDateConverter"></bean>
+            </list>
+        </property>
+    </bean>
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
     <aop:aspectj-autoproxy />
+    <!--dubbo的配置-->
+    <dubbo:application name="export_web_manager"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181" />
+
+    <dubbo:annotation package="com.jgybzx.web"/>
+
+    <!-- 文件上传配置 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="52428800"/>
+    </bean>
 </beans>

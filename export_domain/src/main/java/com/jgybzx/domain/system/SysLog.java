@@ -1,9 +1,10 @@
 package com.jgybzx.domain.system;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class SysLog {
+public class SysLog  implements Serializable {
 
     private String id;
     private String userName;

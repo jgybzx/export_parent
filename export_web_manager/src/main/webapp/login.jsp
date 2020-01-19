@@ -33,7 +33,7 @@
         <p class="login-box-msg">登录系统</p>
         <form action="/login.do" method="post">
             <div class="form-group has-feedback">
-                <input type="email" name="email" value="jgybzx@jgybzx.com" class="form-control" placeholder="Email">
+                <input type="email" name="email" value="lw@export.com" class="form-control" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">

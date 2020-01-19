@@ -41,9 +41,7 @@ public class DownloadUtil {
 		FileInputStream inputStream = null;
 		ServletOutputStream outputStream = null;
 		try {
-			if(!file.exists()) {
-				return;
-			}
+			if(!file.exists()) return;
 			response.reset();
 			//设置响应类型	PDF文件为"application/pdf"，WORD文件为："application/msword"， EXCEL文件为："application/vnd.ms-excel"。  
 			response.setContentType("application/octet-stream;charset=utf-8");
