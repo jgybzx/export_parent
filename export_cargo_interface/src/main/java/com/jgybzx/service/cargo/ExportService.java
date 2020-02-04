@@ -3,6 +3,7 @@ package com.jgybzx.service.cargo;
 import com.github.pagehelper.PageInfo;
 import com.jgybzx.domain.export.Export;
 import com.jgybzx.domain.export.ExportExample;
+import com.jgybzx.domain.vo.ExportResult;
 
 
 public interface ExportService {
@@ -18,5 +19,5 @@ public interface ExportService {
 	PageInfo findAll(ExportExample example, int page, int size);
 
 	//更新报运结果
-	//void exportE(ExportResult result);
+	void exportE(ExportResult result);
 }

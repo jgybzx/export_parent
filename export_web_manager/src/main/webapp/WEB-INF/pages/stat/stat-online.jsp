@@ -36,6 +36,7 @@
 <script src="../../plugins/echarts/echarts.min.js"></script>
 <script type="text/javascript">
     $.get("/stat/getOnlineData.do",function(data) {
+        console.log(data);
         var titles = [];
         var values = [];
         for(var i=0;i<data.length;i++) {

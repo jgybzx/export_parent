@@ -80,7 +80,7 @@
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
         select <include refid="Base_Column_List"/> from co_export_product  where id = #{id,jdbcType=VARCHAR}
     </select>
-    <select id="selectByExportId" resultType="com.jgybzx.domain.export.ExportProduct">
+    <select id="selectByExportId" resultMap="BaseResultMap">
        SELECT * FROM  co_export_product WHERE export_id = #{exportId}
     </select>
 

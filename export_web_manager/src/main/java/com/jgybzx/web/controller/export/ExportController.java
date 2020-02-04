@@ -2,20 +2,27 @@ package com.jgybzx.web.controller.export;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
+import com.jgybzx.domain.BaseEntity;
 import com.jgybzx.domain.cargo.ContractExample;
 import com.jgybzx.domain.export.Export;
 import com.jgybzx.domain.export.ExportExample;
 import com.jgybzx.domain.export.ExportProduct;
 import com.jgybzx.domain.export.ExportProductExample;
+import com.jgybzx.domain.vo.ExportProductVo;
+import com.jgybzx.domain.vo.ExportResult;
+import com.jgybzx.domain.vo.ExportVo;
 import com.jgybzx.service.cargo.ContractService;
 import com.jgybzx.service.cargo.ExportProductService;
 import com.jgybzx.service.cargo.ExportService;
 import com.jgybzx.web.controller.base.BaseController;
+import org.apache.cxf.jaxrs.client.WebClient;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -84,7 +91,10 @@ public class ExportController extends BaseController {
             // 新增出口报运单
             exportService.save(export);
         } else {
+            // 一旦保存会提交两种数据  一种报运单数据，另一种报运单下货物数据
+
             exportService.update(export);
+
         }
         return "redirect:/cargo/export/list.do";
     }
@@ -136,7 +146,93 @@ public class ExportController extends BaseController {
         Export export = exportService.findById(id);
         System.out.println("export = " + export);
         request.setAttribute("export", export);
-//        request.setAttribute("eps", list);
+        List<ExportProduct> list = export.getExportProducts();
+        System.out.println("list = " + list);
+        request.setAttribute("eps", list);
         return "cargo/export/export-update";
     }
+
+    /**
+     * 电子保运
+     * @param id
+     * @return
+     */
+    @RequestMapping("exportE")
+    public String exportE(String id){
+        //1、根据id查询报运数据，构建海关数据
+        Export export = exportService.findById(id);
+        // 2、查询报运单货物数据
+        ExportProductExample exportProductExample = new ExportProductExample();
+        ExportProductExample.Criteria criteria = exportProductExample.createCriteria();
+        criteria.andExportIdEqualTo(id);
+        List<ExportProduct> ExportProductList = exportProductService.findAll(exportProductExample);
+
+        // 3、构建海关需要的ExportVo,
+        ExportVo exportVo = new ExportVo();
+        /**
+         * 实体类是海关提供的，所以需要我们构建实体类
+         * exportVo.set方法(export.get方法);
+         * 由于是我们自己编写的代码，所以ExportVo和Export中的属性差不多一致
+         * 但是实际开发中，需要自己一个一个的构建
+         */
+        // 只能构建基本数据，属性不同的需要我们自己构建
+        BeanUtils.copyProperties(export,exportVo);
+        exportVo.setExportId(export.getId());
+        // 4、构建海关需要的货物数据
+        List<ExportProductVo> exportProductVoList = new ArrayList<>();
+        for (ExportProduct exportProduct : ExportProductList) {
+            ExportProductVo exportProductVo = new ExportProductVo();
+            BeanUtils.copyProperties(exportProduct,exportProductVo);
+            // 特殊数据
+            exportProductVo.setExportProductId(exportProduct.getId());
+            // 建立VO之间的关系
+            exportProductVo.setExportId(export.getId());
+            exportProductVo.setEid(export.getId());
+            // 将货物Vo放入集合中
+            exportProductVoList.add(exportProductVo);
+        }
+        exportVo.setProducts(exportProductVoList);
+
+        // 5、发送数据
+        WebClient client = WebClient.create("http://localhost:9096/ws/export/user");
+        client.post(exportVo);
+        // 6、接受返回结果，再次调用另一个接口
+        client = WebClient.create("http://localhost:9096/ws/export/user/"+id);
+        ExportResult exportResult = client.get(ExportResult.class);
+        // 7、修改报运单状态
+        if (exportResult.getState()==2){
+            // 报运成功，更新报运单
+            System.out.println("更新报运单");
+            exportService.exportE(exportResult);
+        }
+        return "redirect:/cargo/export/list.do";
+    }
+
+    /**
+     * 更新报运单状态 草稿 -》 已提交
+     * @param id
+     * @return
+     */
+    @RequestMapping("submit")
+    public String submit(String id ){
+        Export export = new Export();
+        export.setId(id);
+        export.setState(1);
+        exportService.update(export);
+        return "redirect:/cargo/export/list.do";
+    }
+    /**
+     * 更新报运单状态 已提交  -》 草稿
+     * @param id
+     * @return
+     */
+    @RequestMapping("cancel")
+    public String cancel(String id ){
+        Export export = new Export();
+        export.setId(id);
+        export.setState(0);
+        exportService.update(export);
+        return "redirect:/cargo/export/list.do";
+    }
+
 }

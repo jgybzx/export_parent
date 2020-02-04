@@ -34,39 +34,45 @@
 <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../../plugins/echarts/echarts.min.js"></script>
 <script type="text/javascript">
-    $.get("/stat/getSellData.do",function(data) {
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
 
-        var titles = [];
-        var values = [];
-        for(var i=0;i<data.length;i++) {
-            titles[i] = data[i].name;
-            values[i] = data[i].value;
-        }
-
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('main'));
-
-        // 指定图表的配置项和数据
-        option = {
-            xAxis: {
-                type: 'category',
-                data: titles,
-                axisLabel: {
-                    rotate:70
-                }
-            },
-            yAxis: {
-                type: 'value'
-            },
-            series: [{
-                data: values,
-                type: 'bar'
-            }]
-        };
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+    $(function () {
+        $.get("/stat/findSell.do",function (data) {
+            console.log(data)
+            var name = [];
+            var value = [];
+            for (var i = 0; i <data.length ; i++) {
+                name[i] = data[i].name;
+                value[i]=data[i].value;
+            }
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '产品销量'
+                },
+                tooltip: {},
+                legend: {
+                    data:['销量']
+                },
+                xAxis: {
+                    data: name,
+                    axisLabel:{
+                        rotate:30
+                    }
+                },
+                yAxis: {},
+                series: [{
+                    name: '销量',
+                    type: 'bar',
+                    data: value
+                }]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        })
     })
+
 </script>
 
 </html>

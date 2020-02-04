@@ -11,6 +11,8 @@ import com.jgybzx.dao.export.ExportProductDao;
 import com.jgybzx.dao.export.ExtEproductDao;
 import com.jgybzx.domain.cargo.*;
 import com.jgybzx.domain.export.*;
+import com.jgybzx.domain.vo.ExportProductResult;
+import com.jgybzx.domain.vo.ExportResult;
 import com.jgybzx.service.cargo.ExportService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,9 +65,45 @@ public class ExportServiceImpl implements ExportService {
         return new PageInfo(list);
     }
 
+    /**
+     * 电子报运返回之后 更新报运单数据
+     * 1、修改报运单对象
+     * 2。修改报运单货物对象
+     * @param result
+     */
+    @Override
+    public void exportE(ExportResult result) {
+        // 修改 报运单
+        Export export = new Export();
+        export.setId(result.getExportId());
+        export.setState(result.getState());
+        export.setRemark(result.getRemark());
+        exportDao.updateByPrimaryKeySelective(export);
+        // 修改报运单货物，主要修改税后价格
+        for (ExportProductResult product : result.getProducts()) {
+            ExportProduct exportProduct = new ExportProduct();
+            exportProduct.setId(product.getExportProductId());
+            exportProduct.setTax(product.getTax());
+            exportProductDao.updateByPrimaryKeySelective(exportProduct);
+        }
+    }
+
+    /**
+     * 更新出口报运单数据，分别是报运单的基本数据 和报运单下货物的数据
+     *
+     * @param export
+     */
     @Override
     public void update(Export export) {
-
+        // 更新报运单
+        exportDao.updateByPrimaryKeySelective(export);
+        // 更新报运单货物
+        List<ExportProduct> exportProducts = export.getExportProducts();
+        if (exportProducts != null && !exportProducts.isEmpty()) {
+            for (ExportProduct exportProduct : exportProducts) {
+                exportProductDao.updateByPrimaryKeySelective(exportProduct);
+            }
+        }
     }
 
     /**
@@ -121,7 +159,7 @@ public class ExportServiceImpl implements ExportService {
         contractProductExampleCriteria.andContractIdIn(ContractIdList);
         List<ContractProduct> contractProductList = contractProductDao.selectByExample(contractProductExample);
         //此map就是用来描述 合同货物id & 报运货物id 之间的关系
-        Map<String , String> idMap =new HashMap<String , String>();
+        Map<String, String> idMap = new HashMap<String, String>();
         // 2.2封装报运单 货物数据
         for (ContractProduct contractProduct : contractProductList) {
             ExportProduct exportProduct = new ExportProduct();
@@ -135,7 +173,7 @@ public class ExportServiceImpl implements ExportService {
             // 2.3 保存报运单数据
             exportProductDao.insertSelective(exportProduct);
             // 2.4 设置合同货物id & 报运货物id 之间的关系
-            idMap.put(contractProduct.getId(),exportProduct.getId());
+            idMap.put(contractProduct.getId(), exportProduct.getId());
         }
         // ==============================货物数据保存完毕========================
 
@@ -148,7 +186,7 @@ public class ExportServiceImpl implements ExportService {
         // 2.转换附件数据
         for (ExtCproduct extCproduct : extCproductList) {
             ExtEproduct extEproduct = new ExtEproduct();
-            BeanUtils.copyProperties(extCproduct,extEproduct);
+            BeanUtils.copyProperties(extCproduct, extEproduct);
             extEproduct.setId(UUID.randomUUID().toString());
             // 建立报运单附件和报运单货物的关系，需要借助 合同附件和合同货物的关系，
             /**

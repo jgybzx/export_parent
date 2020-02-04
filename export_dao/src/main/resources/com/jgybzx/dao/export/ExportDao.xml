@@ -30,7 +30,8 @@
             //存放报运单下货物数据
 	            private List<ExportProduct> exportProducts;
         -->
-        <collection property="exportProducts" javaType="list" ofType="com.jgybzx.domain.export.ExportProduct"  select="com.jgybzx.dao.export.ExportProductDao.selectByExportId" column="id"/>
+        <collection property="exportProducts" javaType="list" ofType="com.jgybzx.domain.export.ExportProduct" select="com.jgybzx.dao.export.ExportProductDao.selectByExportId" column="id"></collection>
+
     </resultMap>
 
     <sql id="Base_Column_List">
