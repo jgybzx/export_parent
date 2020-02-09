@@ -10,42 +10,55 @@ import java.util.Properties;
 
 public class MailUtil {
 
-	//实现邮件发送的方法
-	public static void sendMsg(String to ,String subject ,String content) throws Exception{
-		Properties props = new Properties();
-		props.setProperty("mail.smtp.host", "smtp.sina.com");  //设置主机地址   smtp.qq.com    smtp.sina.com
+    /**
+     * 发送邮件
+     * to：邮件接收人的邮箱地址
+     * subject：主题
+     * content：内容
+     */
+    public static void sendMsg(String to, String subject, String content) throws Exception {
+        //1.设置参数
+        Properties props = new Properties();
+        props.setProperty("mail.smtp.host", "smtp.163.com");  //设置主机地址   smtp.qq.com    smtp.163.com
+        props.setProperty("mail.smtp.auth", "true");//认证
 
-		props.setProperty("mail.smtp.auth", "true");//认证
+        //2.产生一个用于邮件发送的Session对象
+        Session session = Session.getInstance(props);
 
-		//2.产生一个用于邮件发送的Session对象
-		Session session = Session.getInstance(props);
+        //3.产生一个邮件的消息对象
+        MimeMessage message = new MimeMessage(session);
 
-		//3.产生一个邮件的消息对象
-		MimeMessage message = new MimeMessage(session);
+        //4.设置消息的发送者
+        Address fromAddr = new InternetAddress("guojy4077@163.com");
+        message.setFrom(fromAddr);
 
-		//4.设置消息的发送者
-		Address fromAddr = new InternetAddress("itcast004@sina.com");
-		message.setFrom(fromAddr);
+        //5.设置消息的接收者
+        Address toAddr = new InternetAddress(to);
+        //TO 直接发送  CC抄送    BCC密送
+        message.setRecipient(MimeMessage.RecipientType.TO, toAddr);
 
-		//5.设置消息的接收者
-		Address toAddr = new InternetAddress(to);
-		//TO 直接发送  CC抄送    BCC密送
-		message.setRecipient(MimeMessage.RecipientType.TO, toAddr);
+        //6.设置主题
+        message.setSubject(subject);
+        //7.设置正文
+        message.setText(content);
 
-		//6.设置主题
-		message.setSubject(subject);
-		//7.设置正文
-		message.setText(content);
+        //8.准备发送，得到火箭
+        Transport transport = session.getTransport("smtp");
+        //9.设置火箭的发射目标
+        transport.connect("smtp.163.com", "guojy4077@163.com", "jgybzx123");
+        //10.发送
+        transport.sendMessage(message, message.getAllRecipients());
 
-		//8.准备发送，得到火箭
-		Transport transport = session.getTransport("smtp");
-		//9.设置火箭的发射目标
-		transport.connect("smtp.sina.com", "itcast004@sina.com", "loveyou");
-		//10.发送
-		transport.sendMessage(message, message.getAllRecipients());
+        //11.关闭
+        transport.close();
+    }
 
-		//11.关闭
-		transport.close();
-	}
 
+    public static void main(String[] args) throws Exception {
+        String to = "linwang_l@163.com";
+        String subject = "邮件主题";
+        String content = "冷冷的冰雹在你脸上胡乱的拍";
+        MailUtil.sendMsg(to, subject, content);
+        System.out.println("发送成功");
+    }
 }

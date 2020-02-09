@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="com.jgybzx.service"/>
+
+    <!--事务配置-->
+    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="transactionManager">
+        <!--dataSource 在另一个配置文件中，虽然编译报错，但是运行时会一起加载，此处报错无需理会-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <tx:advice id="transactionInterceptor">
+        <tx:attributes>
+            <!--查询-->
+            <tx:method name="query*" read-only="true" propagation="SUPPORTS"/>
+            <tx:method name="select*" read-only="true" propagation="SUPPORTS"/>
+            <tx:method name="find*" read-only="true" propagation="SUPPORTS"/>
+            <!--增删改-->
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <aop:pointcut id="pointcut" expression="execution(* com.jgybzx.service.*.*.*.*(..))"/>
+        <aop:advisor advice-ref="transactionInterceptor" pointcut-ref="pointcut"/>
+    </aop:config>
+</beans>

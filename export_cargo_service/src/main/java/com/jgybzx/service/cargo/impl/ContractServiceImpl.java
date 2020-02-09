@@ -10,6 +10,8 @@ import com.jgybzx.domain.vo.ContractProductVo;
 import com.jgybzx.service.cargo.ContractService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -65,5 +67,25 @@ public class ContractServiceImpl implements ContractService {
         // 查询某个公司的所有出货信息
         List<ContractProductVo> list = contractDao.findByShipTime(inputDate, companyId);
         return list;
+    }
+
+    /**
+     * 1.购销合同中交货日期
+     *             DeliveryPeriod字段
+     *   以当前今天的时间为标准，如果有到期的购销合同，今天要交货，可以在早上8:00发出邮件
+     *   SELECT *FROM co_contract WHERE DATE_FORMAT(delivery_period,'%d') = '01'
+     * @param date
+     * @param companyId
+     * @return
+     */
+    @Override
+    public List<String> findBydeliveryPeriod(Date date, String companyId) {
+
+        // 获取日期 中的 day
+        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+        String format = sf.format(date);
+        format = "2020-01-01";
+        contractDao.findBydeliveryPeriod(format,companyId);
+        return null;
     }
 }

@@ -4,6 +4,7 @@ import java.awt.Desktop.Action;
 
 import com.github.pagehelper.PageInfo;
 import com.jgybzx.common.utils.Encrypt;
+import com.jgybzx.common.utils.MailUtil;
 import com.jgybzx.domain.system.Dept;
 import com.jgybzx.domain.system.Role;
 import com.jgybzx.domain.system.User;
@@ -11,6 +12,7 @@ import com.jgybzx.service.system.DeptService;
 import com.jgybzx.service.system.RoleService;
 import com.jgybzx.service.system.UserService;
 import com.jgybzx.web.controller.base.BaseController;
+import com.jgybzx.web.controller.system.rabbitMq.MQProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -18,7 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author: guojy
@@ -88,6 +92,8 @@ public class UserController extends BaseController {
         return "system/user/user-update";
     }
 
+    @Autowired
+    private MQProducer mqProducer;
     /**
      * 添加或修改用户
      * 由于前台页面没有选择 企业id和企业名字，所以本次需要手动写死
@@ -104,8 +110,29 @@ public class UserController extends BaseController {
         // 设置企业名字
         user.setCompanyName(companyName);
         if (StringUtils.isEmpty(user.getId())) {
+            String password = user.getPassword();
+            // 新增用户
             user.setPassword(Encrypt.md5(user.getPassword(),user.getEmail()));
-            userService.save(user);
+            /// userService.save(user);
+            // 新增用户之后 发送一个邮件
+            String to  = user.getEmail();
+            System.out.println(user.getEmail());
+            String subject = "恭喜注册成功";
+            String content = "恭喜注册成功，您的账号是"+user.getEmail()+"您的密码是"+password+",请保管好您的密码";
+            try {
+                // 发送邮件
+                //MailUtil.sendMsg(to, subject, content);
+                Map<String,String> map = new HashMap<>();
+                map.put("to",to);
+                map.put("subject",subject);
+                map.put("content",content);
+                // 发送消息给中间件
+                System.out.println("消息发送中间件");
+                mqProducer.sendData("mail.send",map);
+                System.out.println("发送成功");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } else {
             user.setPassword(Encrypt.md5(user.getPassword(),user.getEmail()));
             userService.update(user);

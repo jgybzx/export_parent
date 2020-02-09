@@ -1,0 +1,1785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SPLITTER_PROPORTION" value="0.38467616" />
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="export_web_manager:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0ecdb12f-92b2-419f-ae24-649fe0b1f0c0" name="Default Changelist" comment="合同管理，报运管理">
+      <change afterPath="$PROJECT_DIR$/export_mail/export_mail.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_mail/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_mail/src/main/java/com/jgybzx/listener/MyListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_mail/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_mail/src/test/java/TestMail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/export/ExportPDFDownload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/quartz/Myjob.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/rabbitMq/MQProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/rabbitMq/MQProducerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_manager/src/main/resources/jasperreports_extension.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_manager/src/main/resources/spring/applicationContext-mq.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_manager/src/main/resources/spring/applicationContext-task.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_manager/src/main/resources/stsong/fonts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_manager/src/main/resources/stsong/stsong.TTF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_manager/src/main/webapp/jasper/test01.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_manager/src/main/webapp/jasper/test02.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_manager/src/main/webapp/jasper/testList.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_manager/src/main/webapp/jasper/testMap.jasper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/bootstrap-3.3.7/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/bootstrap-3.3.7/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/bootstrap-3.3.7/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/bootstrap-3.3.7/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/bootstrap-3.3.7/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/bootstrap-3.3.7/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/bootstrap-3.3.7/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/bootstrap-3.3.7/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/AUTHORS.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/dist/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/dist/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/dist/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/dist/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/dist/jquery.slim.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/dist/jquery.slim.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/dist/jquery.slim.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/external/sizzle/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/external/sizzle/dist/sizzle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/external/sizzle/dist/sizzle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/external/sizzle/dist/sizzle.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/ajax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/ajax/jsonp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/ajax/load.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/ajax/parseJSON.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/ajax/parseXML.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/ajax/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/ajax/var/location.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/ajax/var/nonce.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/ajax/var/rquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/ajax/xhr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/attributes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/attributes/attr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/attributes/classes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/attributes/prop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/attributes/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/attributes/val.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/callbacks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/core/DOMEval.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/core/access.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/core/init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/core/nodeName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/core/parseHTML.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/core/ready-no-deferred.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/core/ready.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/core/readyException.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/core/stripAndCollapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/core/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/core/var/rsingleTag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css/addGetHookIf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css/adjustCSS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css/curCSS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css/defaultDisplay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css/hiddenVisibleSelectors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css/showHide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css/var/cssExpand.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css/var/getStyles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css/var/isHidden.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css/var/isHiddenWithinTree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css/var/rmargin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css/var/rnumnonpx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/css/var/swap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/data/Data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/data/var/acceptData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/data/var/dataPriv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/data/var/dataUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/deferred.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/deferred/exceptionHook.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/deprecated.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/dimensions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/effects.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/effects/Tween.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/effects/animatedSelector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/event/ajax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/event/alias.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/event/focusin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/event/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/event/trigger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/exports/amd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/exports/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/intro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/manipulation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/manipulation/_evalUrl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/manipulation/buildFragment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/manipulation/getAll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/manipulation/setGlobalEval.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/manipulation/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/manipulation/var/rcheckableType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/manipulation/var/rscriptType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/manipulation/var/rtagName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/manipulation/wrapMap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/offset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/outro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/queue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/queue/delay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/selector-native.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/selector-sizzle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/selector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/serialize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/traversing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/traversing/findFilter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/traversing/var/dir.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/traversing/var/rneedsContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/traversing/var/siblings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/ObjectFunctionString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/arr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/class2type.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/concat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/document.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/documentElement.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/fnToString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/getProto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/hasOwn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/indexOf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/pnum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/push.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/rcssNum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/rnothtmlwhite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/rnotwhite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/slice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/support.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/var/toString.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export_web_portal/src/main/webapp/plugins/jquery/src/wrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_cargo_interface/src/main/java/com/jgybzx/service/cargo/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/export_cargo_interface/src/main/java/com/jgybzx/service/cargo/ContractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_cargo_service/src/main/java/com/jgybzx/service/cargo/impl/ContractServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/export_cargo_service/src/main/java/com/jgybzx/service/cargo/impl/ContractServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_common/src/main/java/com/jgybzx/common/utils/MailUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/export_common/src/main/java/com/jgybzx/common/utils/MailUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_dao/src/main/java/com/jgybzx/dao/cargo/ContractDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/export_dao/src/main/java/com/jgybzx/dao/cargo/ContractDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_dao/src/main/resources/com/jgybzx/dao/cargo/ContractDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/export_dao/src/main/resources/com/jgybzx/dao/cargo/ContractDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_dao/src/main/resources/com/jgybzx/dao/stat/StatDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/export_dao/src/main/resources/com/jgybzx/dao/stat/StatDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_web_manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/export_web_manager/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_web_manager/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/export_web_manager/src/main/resources/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_web_manager/src/main/webapp/WEB-INF/pages/stat/stat-factory.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/export_web_manager/src/main/webapp/WEB-INF/pages/stat/stat-factory.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_web_manager/src/main/webapp/WEB-INF/pages/stat/stat-online.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/export_web_manager/src/main/webapp/WEB-INF/pages/stat/stat-online.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/export_dao/target/" />
+    <ignored path="$PROJECT_DIR$/export_system_service/target/" />
+    <ignored path="$PROJECT_DIR$/export_web_manager/target/" />
+    <ignored path="$PROJECT_DIR$/export_domain/target/" />
+    <ignored path="$PROJECT_DIR$/export_common/target/" />
+    <ignored path="$PROJECT_DIR$/export_company_interface/target/" />
+    <ignored path="$PROJECT_DIR$/export_company_service/target/" />
+    <ignored path="$PROJECT_DIR$/export_web_portal/target/" />
+    <ignored path="$PROJECT_DIR$/export_cargo_interface/target/" />
+    <ignored path="$PROJECT_DIR$/export_cargo_service/target/" />
+    <ignored path="$PROJECT_DIR$/export_stat_service/target/" />
+    <ignored path="$PROJECT_DIR$/export_stat_interface/target/" />
+    <ignored path="$PROJECT_DIR$/export_mail/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="export_parent" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/export/ExportPDFDownload.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8">
+              <caret line="71" column="5" selection-start-line="44" selection-start-column="4" selection-end-line="71" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/resources/spring/applicationContext-task.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="421">
+              <caret line="37" column="8" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="37" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/quartz/Myjob.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8">
+              <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/export/ExportController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8">
+              <caret line="182" selection-start-line="182" selection-end-line="185" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#contractList#0;class#ExportController#0" />
+                <element signature="docComment;method#toExport#0;class#ExportController#0" />
+                <element signature="method#toExport#0;class#ExportController#0" />
+                <element signature="docComment;method#edit#0;class#ExportController#0" />
+                <element signature="docComment;method#list#0;class#ExportController#0" />
+                <element signature="method#list#0;class#ExportController#0" />
+                <element signature="docComment;method#toView#0;class#ExportController#0" />
+                <element signature="method#toView#0;class#ExportController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/export_dao/src/main/java/com/jgybzx/dao/stat/StatDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8">
+              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/com/jgybzx/dao/stat/StatDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8">
+              <caret line="24" selection-start-line="24" selection-end-line="31" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/resources/spring/applicationContext-mq.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-18">
+              <caret line="18" column="53" selection-end-line="57" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8">
+              <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/export_cargo_service/src/main/java/com/jgybzx/service/cargo/impl/ContractServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8">
+              <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/cargo/ContractController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Aspect" />
+        <option value="Interface" />
+        <option value="spring-beans.schema" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>pageResult</find>
+      <find>/</find>
+      <find>cn.itcast.domain.system.Use</find>
+      <find>cn.itcast.domain.system.User</find>
+      <find>editForm</find>
+      <find>status</find>
+      <find>部门</find>
+      <find>Dept</find>
+      <find>dept</find>
+      <find>moudle</find>
+      <find>nextPage</find>
+      <find>treeDemo</find>
+      <find>moduleService</find>
+      <find>moduleIds</find>
+      <find>登</find>
+      <find>spring-aop</find>
+      <find>aspectjweaver</find>
+      <find>proceedingJoinPoint</find>
+      <find>spring-context</find>
+      <find>cn.itcast</find>
+      <find>dao</find>
+      <find />
+      <find>contractProductService</find>
+      <find>css</find>
+      <find>printExcel</find>
+      <find>cn.itcast.domain</find>
+      <find>cn.itcast.domain.cargo</find>
+      <find>cn.itcast.dao.cargo</find>
+      <find>getContractIds</find>
+      <find>qu</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>page</replace>
+      <replace />
+      <replace>com.jgybzx.domain.system.User</replace>
+      <replace>User</replace>
+      <replace>user</replace>
+      <replace>用户</replace>
+      <replace>Rolet</replace>
+      <replace>角色</replace>
+      <replace>Model</replace>
+      <replace>moudle</replace>
+      <replace>module</replace>
+      <replace>pjp</replace>
+      <replace>com.jgybzx</replace>
+      <replace>cellStyles</replace>
+      <replace>com.jgybzx.domain</replace>
+      <replace>com.jgybzx.dao.export</replace>
+      <replace>com.jgybzx.domain.export</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/cargo/ExtCproductController.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/export_dao/src/main/java/com/jgybzx/dao/export/ExtEproductDao.java" />
+        <option value="$PROJECT_DIR$/export_cargo_interface/src/main/java/com/jgybzx/service/cargo/ExportProductService.java" />
+        <option value="$PROJECT_DIR$/export_dao/src/main/resources/com/jgybzx/dao/export/ExtEproductDao.xml" />
+        <option value="$PROJECT_DIR$/export_domain/src/main/java/com/jgybzx/domain/cargo/Contract.java" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/cargo/ContractProductUploadController.java" />
+        <option value="$PROJECT_DIR$/export_domain/src/main/java/com/jgybzx/domain/export/ExportProduct.java" />
+        <option value="$PROJECT_DIR$/export_cargo_service/src/main/java/com/jgybzx/service/cargo/impl/ExportProductServiceImpl.java" />
+        <option value="$PROJECT_DIR$/export_domain/src/main/java/com/jgybzx/domain/export/Export.java" />
+        <option value="$PROJECT_DIR$/export_dao/src/main/java/com/jgybzx/dao/export/ExportProductDao.java" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/webapp/WEB-INF/pages/cargo/export/export-update.jsp" />
+        <option value="$PROJECT_DIR$/export_dao/src/main/resources/com/jgybzx/dao/export/ExportProductDao.xml" />
+        <option value="$PROJECT_DIR$/export_dao/src/main/resources/com/jgybzx/dao/export/ExportDao.xml" />
+        <option value="$PROJECT_DIR$/export_domain/src/main/java/com/jgybzx/domain/vo/ExportVo.java" />
+        <option value="$PROJECT_DIR$/export_domain/src/main/java/com/jgybzx/domain/vo/ExportResult.java" />
+        <option value="$PROJECT_DIR$/export_domain/src/main/java/com/jgybzx/domain/vo/ExportProductResult.java" />
+        <option value="$PROJECT_DIR$/export_cargo_interface/src/main/java/com/jgybzx/service/cargo/ExportService.java" />
+        <option value="$PROJECT_DIR$/export_cargo_service/src/main/java/com/jgybzx/service/cargo/impl/ExportServiceImpl.java" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/export/ExportController.java" />
+        <option value="$PROJECT_DIR$/export_stat_service/pom.xml" />
+        <option value="$PROJECT_DIR$/export_stat_interface/pom.xml" />
+        <option value="$PROJECT_DIR$/export_stat_service/src/main/resources/spring/applicationContext-statservice.xml" />
+        <option value="$PROJECT_DIR$/export_stat_service/src/test/java/test/CompanyProvider.java" />
+        <option value="$PROJECT_DIR$/export_stat_service/src/test/java/com/jgybzx/test/StatProvider.java" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/webapp/WEB-INF/pages/stat/stat-sell.jsp" />
+        <option value="$PROJECT_DIR$/export_stat_interface/src/main/java/com/jgybzx/service/stat/StatService.java" />
+        <option value="$PROJECT_DIR$/export_stat_service/src/main/java/com/jgybzx/service/stat/impl/StatServiceImpl.java" />
+        <option value="$PROJECT_DIR$/export_dao/src/main/java/com/jgybzx/dao/stat/StatDao.java" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/stat/StatController.java" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/webapp/WEB-INF/pages/stat/stat-online.jsp" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/webapp/WEB-INF/pages/stat/stat-factory.jsp" />
+        <option value="$PROJECT_DIR$/export_common/src/main/java/com/jgybzx/common/utils/MailUtil.java" />
+        <option value="$PROJECT_DIR$/export_dao/src/main/resources/com/jgybzx/dao/stat/StatDao.xml" />
+        <option value="$PROJECT_DIR$/export_web_manager/pom.xml" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/resources/spring/applicationContext-mq.xml" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/rabbitMq/sendEmail.java" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/rabbitMq/MQProducer.java" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/UserController.java" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/rabbitMq/MQProducerImpl.java" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/interface_api/MQProducerImpl.java" />
+        <option value="$PROJECT_DIR$/export_mail/pom.xml" />
+        <option value="$PROJECT_DIR$/export_mail/src/test/java/TestMail.java" />
+        <option value="$PROJECT_DIR$/export_mail/src/main/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/export_mail/src/main/java/com/jgybzx/listener/MyListener.java" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/resources/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/export/ExportPDFDownload.java" />
+        <option value="$PROJECT_DIR$/export_cargo_interface/src/main/java/com/jgybzx/service/cargo/ContractService.java" />
+        <option value="$PROJECT_DIR$/export_dao/src/main/java/com/jgybzx/dao/cargo/ContractDao.java" />
+        <option value="$PROJECT_DIR$/export_dao/src/main/resources/com/jgybzx/dao/cargo/ContractDao.xml" />
+        <option value="$PROJECT_DIR$/export_cargo_service/src/main/java/com/jgybzx/service/cargo/impl/ContractServiceImpl.java" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/quartz/Myjob.java" />
+        <option value="$PROJECT_DIR$/export_web_manager/src/main/resources/spring/applicationContext-task.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Develop\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../apache-maven-3.5.2" />
+        <option name="userSettingsFile" value="D:\Develop\apache-maven-3.5.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="export_parent" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="export_parent" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="#JAVA_HOME" />
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="stat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_web_manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_web_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_web_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_web_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_web_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jgybzx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_web_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jgybzx" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_web_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jgybzx" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="export" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_web_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_web_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="export_parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="export_parent" type="462c0819:PsiDirectoryNode" />
+              <item name="export_web_manager" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581132752681" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../rabbit基础代码" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Develop\IdeaProjects\jgybzx_Project_one\export_parent\export_web_manager\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.jgybzx.listener" />
+      <recent name="com.jgybzx.test" />
+      <recent name="test" />
+      <recent name="com.jgybzx.service.company.impl" />
+      <recent name="com.jgybzx.shiro_02" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Develop\IdeaProjects\jgybzx_Project_one\export_parent\export_web_manager\src\main\resources\spring" />
+      <recent name="D:\Develop\IdeaProjects\jgybzx_Project_one\export_parent\export_web_manager\src\main\webapp\jasper" />
+      <recent name="D:\Develop\IdeaProjects\jgybzx_Project_one\export_parent\export_web_manager\src\main\resources" />
+      <recent name="D:\Develop\IdeaProjects\jgybzx_Project_one\export_parent\export_mail\src\main\resources" />
+      <recent name="D:\Develop\IdeaProjects\jgybzx_Project_one\export_parent\export_web_manager\src\main\java\com\jgybzx\web\controller\system" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.web_tomcat8">
+    <configuration name="CargoProvider" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jgybzx.test.CargoProvider" />
+      <module name="export_cargo_service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jgybzx.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MailUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jgybzx.common.utils.MailUtil" />
+      <module name="export_common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jgybzx.common.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatProvider" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jgybzx.test.StatProvider" />
+      <module name="export_stat_service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jgybzx.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestMail" />
+      <module name="export_mail" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMail.testmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="export_mail" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestMail" />
+      <option name="METHOD_NAME" value="testmail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="export_web_portal" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.23" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8082/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="export_web_portal:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_export_parent_2" />
+        <option name="HTTP_PORT" value="8082" />
+        <option name="JNDI_PORT" value="1097" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51883" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="JRebel Debug">
+        <option name="DEBUG_PORT" value="51884" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="JRebel Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="JRebel Executor">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="export_web_portal:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="web_tomcat8" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.23" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="export_web_manager:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_export_parent" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51804" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="JRebel Debug">
+        <option name="DEBUG_PORT" value="51805" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="JRebel Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="JRebel Executor">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="export_web_manager:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.CargoProvider" />
+      <item itemvalue="Application.StatProvider" />
+      <item itemvalue="Application.MailUtil" />
+      <item itemvalue="Application.TestMail" />
+      <item itemvalue="JUnit.TestMail.testmail" />
+      <item itemvalue="Tomcat Server.web_tomcat8" />
+      <item itemvalue="Tomcat Server.export_web_portal" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CargoProvider" />
+        <item itemvalue="Application.TestMail" />
+        <item itemvalue="JUnit.TestMail.testmail" />
+        <item itemvalue="Application.StatProvider" />
+        <item itemvalue="Application.MailUtil" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0ecdb12f-92b2-419f-ae24-649fe0b1f0c0" name="Default Changelist" comment="" />
+      <created>1577956060673</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577956060673</updated>
+      <workItem from="1577956067537" duration="6235000" />
+      <workItem from="1578011385765" duration="659000" />
+      <workItem from="1578012113323" duration="2643000" />
+      <workItem from="1578020682586" duration="19525000" />
+      <workItem from="1578136190233" duration="1876000" />
+      <workItem from="1578138596075" duration="803000" />
+      <workItem from="1578139448208" duration="3770000" />
+      <workItem from="1578144966104" duration="47000" />
+      <workItem from="1578145070996" duration="598000" />
+      <workItem from="1578145759784" duration="62000" />
+      <workItem from="1578145875437" duration="162000" />
+      <workItem from="1578183800069" duration="19147000" />
+      <workItem from="1578217134901" duration="182000" />
+      <workItem from="1578217394004" duration="2311000" />
+      <workItem from="1578223667257" duration="3293000" />
+      <workItem from="1578229871828" duration="625000" />
+      <workItem from="1578270064656" duration="29113000" />
+      <workItem from="1578379561430" duration="12665000" />
+      <workItem from="1578444321178" duration="24433000" />
+      <workItem from="1578537772640" duration="21252000" />
+      <workItem from="1578625943634" duration="9369000" />
+      <workItem from="1578725632370" duration="1909000" />
+      <workItem from="1578742261600" duration="7326000" />
+      <workItem from="1578752950299" duration="62000" />
+      <workItem from="1578791878931" duration="212000" />
+      <workItem from="1578792108006" duration="118000" />
+      <workItem from="1578792519460" duration="15073000" />
+      <workItem from="1578821519122" duration="8290000" />
+      <workItem from="1578829909294" duration="4574000" />
+      <workItem from="1578836029701" duration="6637000" />
+      <workItem from="1578902844460" duration="2411000" />
+      <workItem from="1578961852952" duration="31307000" />
+      <workItem from="1579073974775" duration="17583000" />
+      <workItem from="1579095323306" duration="7388000" />
+      <workItem from="1579140203259" duration="5274000" />
+      <workItem from="1579146130222" duration="2891000" />
+      <workItem from="1579149282791" duration="10633000" />
+      <workItem from="1579412566832" duration="11886000" />
+      <workItem from="1580604491107" duration="206000" />
+      <workItem from="1580604784364" duration="206000" />
+      <workItem from="1580607254399" duration="36000" />
+      <workItem from="1580611307754" duration="4349000" />
+      <workItem from="1580697566426" duration="6046000" />
+      <workItem from="1580781661090" duration="21448000" />
+      <workItem from="1580867358700" duration="9379000" />
+      <workItem from="1580905592583" duration="1405000" />
+      <workItem from="1580911199175" duration="3569000" />
+      <workItem from="1580999597995" duration="2239000" />
+      <workItem from="1581037481924" duration="4180000" />
+      <workItem from="1581064650325" duration="18027000" />
+    </task>
+    <task id="LOCAL-00001" summary="货代平台页面搭建&amp;基本CRUD&amp;分页查询">
+      <created>1578136451184</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578136451184</updated>
+    </task>
+    <task id="LOCAL-00002" summary="部门管理、用户管理，">
+      <created>1578292192690</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578292192690</updated>
+    </task>
+    <task id="LOCAL-00003" summary="用户角色分配。RBAC权限模型">
+      <created>1578300376914</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578300376914</updated>
+    </task>
+    <task id="LOCAL-00004" summary="用户登陆">
+      <created>1578384699987</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1578384699987</updated>
+    </task>
+    <task id="LOCAL-00005" summary="日志管理（未完）">
+      <created>1578444450711</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1578444450711</updated>
+    </task>
+    <task id="LOCAL-00006" summary="shiro框架整合，实现登陆认证以及授权管理">
+      <created>1578640843378</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1578640843378</updated>
+    </task>
+    <task id="LOCAL-00007" summary="dubbo分布式架构实现企业申请，前台页面的开发">
+      <created>1578792032781</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1578792032781</updated>
+    </task>
+    <task id="LOCAL-00008" summary="合同管理，报运管理">
+      <created>1579428246752</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1579428246752</updated>
+    </task>
+    <task id="LOCAL-00009" summary="合同管理，报运管理">
+      <created>1579428290034</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1579428290034</updated>
+    </task>
+    <task id="LOCAL-00010" summary="合同管理，报运管理">
+      <created>1579430095769</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1579430095769</updated>
+    </task>
+    <task id="LOCAL-00011" summary="合同管理，报运管理">
+      <created>1579430349916</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1579430349917</updated>
+    </task>
+    <task id="LOCAL-00012" summary="电子保运以及Echarts图表实现统计分析">
+      <created>1580821021369</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1580821021369</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="TestDemo_main - 2020.01.02 at 17h 39m 27s.xml">
+      <configuration name="TestDemo.main" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDemo_test - 2020.01.02 at 17h 49m 54s.xml">
+      <configuration name="TestDemo.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDemo_test - 2020.01.02 at 17h 51m 39s.xml">
+      <configuration name="TestDemo.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDemo_test - 2020.01.02 at 17h 57m 32s.xml">
+      <configuration name="TestDemo.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestDemo_test_(1) - 2020.01.02 at 18h 03m 59s.xml">
+      <configuration name="TestDemo.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LogAspect_test - 2020.01.08 at 16h 22m 49s.xml">
+      <configuration name="LogAspect.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Controller_test - 2020.01.08 at 16h 24m 38s.xml">
+      <configuration name="Controller.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestMail_testmail - 2020.02.06 at 22h 54m 43s.xml">
+      <configuration name="TestMail.testmail" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestMail_testmail - 2020.02.06 at 22h 55m 13s.xml">
+      <configuration name="TestMail.testmail" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestMail_testmail - 2020.02.06 at 22h 56m 40s.xml">
+      <configuration name="TestMail.testmail" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="363434000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.23024055" visible="true" weight="0.13086233" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.24962178" />
+      <window_info id="Designer" order="2" />
+      <window_info id="JRebel" order="3" sideWeight="0.8642659" side_tool="true" weight="0.23600605" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Favorites" order="7" sideWeight="0.7697595" side_tool="true" weight="0.26626325" />
+      <window_info id="Web" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.34020618" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.48453608" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3298969" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3281787" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50680786" side_tool="true" weight="0.6821306" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.3298969" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.3298969" />
+      <window_info anchor="bottom" id="JRebel Executor" order="15" sideWeight="0.49546143" weight="0.290378" />
+      <window_info anchor="bottom" id="JRebel Console" order="16" sideWeight="0.50075644" side_tool="true" weight="0.3298969" />
+      <window_info anchor="bottom" id="Messages" order="17" sideWeight="0.49319214" weight="0.3024055" />
+      <window_info anchor="bottom" id="Inspection Results" order="18" weight="0.4707904" />
+      <window_info anchor="bottom" id="Duplicate detector" order="19" weight="0.41065294" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.24962178" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32980332" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Word Book" order="9" side_tool="true" />
+      <window_info anchor="right" id="aiXcoder" order="10" weight="0.32980332" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.23024055" visible="true" weight="0.2473525" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.24962178" />
+      <window_info id="Designer" order="2" />
+      <window_info id="JRebel" order="3" sideWeight="0.8642659" side_tool="true" weight="0.23600605" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Favorites" order="7" sideWeight="0.7697595" side_tool="true" weight="0.26626325" />
+      <window_info id="Web" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.419244" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.48453608" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3298969" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3281787" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50680786" side_tool="true" weight="0.6821306" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.3298969" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.3298969" />
+      <window_info active="true" anchor="bottom" id="JRebel Executor" order="15" sideWeight="0.49546143" visible="true" weight="0.2869416" />
+      <window_info anchor="bottom" id="JRebel Console" order="16" sideWeight="0.50075644" side_tool="true" weight="0.3298969" />
+      <window_info anchor="bottom" id="Messages" order="17" sideWeight="0.49319214" weight="0.15463917" />
+      <window_info anchor="bottom" id="Inspection Results" order="18" weight="0.4707904" />
+      <window_info anchor="bottom" id="Duplicate detector" order="19" weight="0.41065294" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.24962178" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32980332" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Word Book" order="9" side_tool="true" />
+      <window_info anchor="right" id="aiXcoder" order="10" weight="0.32980332" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="页面搭建以及基本CRUD" />
+    <MESSAGE value="货代平台页面搭建&amp;基本CRUD&amp;分页查询" />
+    <MESSAGE value="部门管理、用户管理，" />
+    <MESSAGE value="用户角色分配。RBAC权限模型" />
+    <MESSAGE value="用户登陆" />
+    <MESSAGE value="日志管理（未完）" />
+    <MESSAGE value="shiro框架整合，实现登陆认证以及授权管理" />
+    <MESSAGE value="dubbo分布式架构实现企业申请，前台页面的开发" />
+    <MESSAGE value="电子保运以及Echarts图表实现统计分析" />
+    <MESSAGE value="合同管理，报运管理" />
+    <option name="LAST_COMMIT_MESSAGE" value="合同管理，报运管理" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/export_dao/src/main/java/com/jgybzx/dao/cargo/ContractProductDao.java</url>
+          <line>17</line>
+          <properties class="com.jgybzx.dao.cargo.ContractProductDao" method="selectByExample">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/export_cargo_interface/src/main/java/com/jgybzx/service/cargo/ExportService.java</url>
+          <line>21</line>
+          <properties class="com.jgybzx.service.cargo.ExportService" method="exportE">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/export_dao/src/main/java/com/jgybzx/dao/export/ExportProductDao.java</url>
+          <line>8</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/export_stat_service/src/main/resources/spring/applicationContext-stattx.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_stat_service/src/test/java/test/CompanyProvider.java" />
+    <entry file="file://$PROJECT_DIR$/export_stat_service/src/main/resources/spring/applicationContext-statservice.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_stat_service/src/test/java/com/jgybzx/test/StatProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/com/jgybzx/dao/system/DeptDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="48" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/webapp/WEB-INF/pages/stat/stat-sell.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/webapp/WEB-INF/pages/stat/stat-online.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1647">
+          <caret line="61" column="29" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/webapp/WEB-INF/pages/stat/stat-factory.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_common/src/main/java/com/jgybzx/common/utils/MailUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1404">
+          <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/stat/StatController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_stat_interface/src/main/java/com/jgybzx/service/stat/StatService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_stat_service/src/main/java/com/jgybzx/service/stat/impl/StatServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1161">
+          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/login/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/interface_api/MQProducer.java" />
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/interface_api/MQProducerImpl.java" />
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_mail/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+          <folding>
+            <element signature="n#dependency#0;n#dependencies#0;n#project#0;n#!!top" />
+            <element signature="n#dependency#1;n#dependencies#0;n#project#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_mail/src/main/java/com/jgybzx/listener/MyListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_mail/src/test/java/TestMail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_mail/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="113" column="29" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
+          <folding>
+            <element signature="n#dependency#15;n#dependencies#0;n#project#0;n#!!top" />
+            <element signature="n#dependency#16;n#dependencies#0;n#project#0;n#!!top" />
+            <element signature="n#dependency#17;n#dependencies#0;n#project#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/resources/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/resources/stsong/fonts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/resources/jasperreports_extension.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/webapp/jasper/test01.jrxml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.5.0/jasperreports-6.5.0-sources.jar!/net/sf/jasperreports/engine/JREmptyDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_domain/src/main/java/com/jgybzx/domain/system/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-195">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_domain/src/main/java/com/jgybzx/domain/export/ExportProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_cargo_interface/src/main/java/com/jgybzx/service/cargo/ExportService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_cargo_service/src/main/java/com/jgybzx/service/cargo/impl/ExportServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/cargo/ContractPrintController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="131" column="9" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.5.RELEASE/spring-web-5.0.5.RELEASE-sources.jar!/org/springframework/http/HttpHeaders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="850" column="50" selection-start-line="850" selection-start-column="41" selection-end-line="850" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_common/src/main/java/com/jgybzx/common/utils/DownloadUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="361" column="12" selection-start-line="361" selection-start-column="12" selection-end-line="361" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/rabbitMq/MQProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/rabbitMq/MQProducerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/5.0.5.RELEASE/spring-context-support-5.0.5.RELEASE-sources.jar!/org/springframework/scheduling/quartz/SchedulerFactoryBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_domain/src/main/java/com/jgybzx/domain/cargo/Contract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_cargo_interface/src/main/java/com/jgybzx/service/cargo/ContractService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="45" column="67" selection-start-line="45" selection-start-column="67" selection-end-line="45" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_dao/src/main/java/com/jgybzx/dao/cargo/ContractDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/com/jgybzx/dao/cargo/ContractDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="383" column="89" selection-start-line="383" selection-start-column="89" selection-end-line="383" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/system/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_cargo_service/src/main/java/com/jgybzx/service/cargo/impl/ContractServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/cargo/ContractController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/quartz/Myjob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_dao/src/main/java/com/jgybzx/dao/stat/StatDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_dao/src/main/resources/com/jgybzx/dao/stat/StatDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="24" selection-start-line="24" selection-end-line="31" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/resources/spring/applicationContext-mq.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18">
+          <caret line="18" column="53" selection-end-line="57" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/export/ExportController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="182" selection-start-line="182" selection-end-line="185" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#contractList#0;class#ExportController#0" />
+            <element signature="docComment;method#toExport#0;class#ExportController#0" />
+            <element signature="method#toExport#0;class#ExportController#0" />
+            <element signature="docComment;method#edit#0;class#ExportController#0" />
+            <element signature="docComment;method#list#0;class#ExportController#0" />
+            <element signature="method#list#0;class#ExportController#0" />
+            <element signature="docComment;method#toView#0;class#ExportController#0" />
+            <element signature="method#toView#0;class#ExportController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/java/com/jgybzx/web/controller/export/ExportPDFDownload.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="71" column="5" selection-start-line="44" selection-start-column="4" selection-end-line="71" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/export_web_manager/src/main/resources/spring/applicationContext-task.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="37" column="8" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="37" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>export_web_manager:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>export_company_interface</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: bouncycastle:bcmail-jdk14:138</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

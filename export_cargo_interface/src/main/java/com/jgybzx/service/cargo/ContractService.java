@@ -6,6 +6,7 @@ import com.jgybzx.domain.cargo.Contract;
 import com.jgybzx.domain.cargo.ContractExample;
 import com.jgybzx.domain.vo.ContractProductVo;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -33,4 +34,14 @@ public interface ContractService {
      * @return
      */
     List<ContractProductVo> findByShipTime(String inputDate, String companyId);
+
+    /**
+     * 1.购销合同中交货日期
+     *             DeliveryPeriod字段
+     *   以当前今天的时间为标准，如果有到期的购销合同，今天要交货，可以在早上8:00发出邮件
+     * @param date
+     * @param companyId
+     * @return
+     */
+    List<String> findBydeliveryPeriod(Date date, String companyId);
 }
